@@ -1,10 +1,10 @@
 <div class="main">
-    <button class="menu" mat-icon-button *ngIf="!isSidebarShow" (click)="toggleSidebar()">
+  <button class="menu" mat-icon-button (click)="toggleSidebar()">
     <mat-icon>menu</mat-icon>
   </button>
   <div class="my-content">
     <div class="form-outline">
-     
+      <input type="search" id="form1" class="form-control" placeholder="Search" />
     </div>
     <div class="logout_section">
       <span class="bell-icon" style="font-size: 2rem;">
@@ -20,8 +20,8 @@
             </button>
             <mat-menu #menu="matMenu">
               <button (click)="logOut()" mat-menu-item>
-              <mat-icon>logout</mat-icon>
-              Logout
+                <mat-icon>Exist to App</mat-icon>
+                Logout
               </button>
             </mat-menu>
           </li>

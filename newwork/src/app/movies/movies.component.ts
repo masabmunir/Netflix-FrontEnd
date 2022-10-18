@@ -17,7 +17,7 @@ export class MoviesComponent implements OnInit {
   format: any;
   collection: any = []
   movId: any = 0
-  searchText:any
+
   constructor(private myFormBuilder: FormBuilder,
     private userMovies: UserMoviesService) { }
 

@@ -1,22 +1,30 @@
 <mat-nav-list>
-    <button class="menu" mat-icon-button (click)="toggleSidebar()">
-        <mat-icon class="clear">clear</mat-icon>
-      </button>
     <div class="logo py-4">
-        <img src="../.././assets/netflix-logo-png-2573.png" class="Logo-image" />
+        <img src="../.././assets/netflix-logo-.png" />
     </div>
-   
+
     <h2 matSubheader class="mt-2">Dashboard</h2>
     <mat-divider></mat-divider>
-    
+
     <a mat-list-item routerLink="home" routerLinkActive="list-item-active" >
-        <mat-icon>home</mat-icon><span class="button-hover">Users</span> 
+        <mat-icon>home</mat-icon><span class="button-hover">Users</span>
     </a>
     <a mat-list-item routerLink="dashboard"  routerLinkActive="list-item-active">
-        <mat-icon>dashboard</mat-icon><span class="button-hover">Slider</span>
+        <mat-icon>dashboard</mat-icon><span class="button-hover">Add Slider</span>
     </a>
     <a mat-list-item routerLink="movies" routerLinkActive="list-item-active">
-        <mat-icon>movies</mat-icon><span class="button-hover">Movies</span>
+        <mat-icon>movies</mat-icon><span class="button-hover">Add Movies</span>
     </a>
-   
+    <a mat-list-item routerLink="videos" routerLinkActive="list-item-active">
+      <mat-icon>ondemand_video</mat-icon><span class="button-hover">Add Videos
+      </span>
+  </a>
+  <a mat-list-item routerLink="songs" routerLinkActive="list-item-active">
+    <mat-icon>ondemand_video</mat-icon><span class="button-hover">Add Songs
+    </span>
+</a>
+    <!-- <a mat-list-item>
+        <mat-icon>edit</mat-icon>Link 2
+    </a> -->
+
 </mat-nav-list>

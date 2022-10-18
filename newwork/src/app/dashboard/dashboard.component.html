@@ -1,6 +1,7 @@
 <!--- Modal Code Start -->
 
-
+<button style="margin: 20px; padding: 8px" type="button" class="btn same-btn" (click)="openPopup()">Add
+    Slider</button>
 <form [formGroup]="addImage" (ngSubmit)="isUpdate ? updateData() : saveData()">
     <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
         <div class="modal-dialog" role="document">
@@ -42,17 +43,13 @@
 <!---Modal End Here -->
 
 <div class="card main-card mb-3">
-    
+    <div class="card-header">
+      <h3 class="text-center"> Slider Content </h3>
+    </div>
     <div class="table-responsive">
-        <h3 class="text-center"><span>Slider Content</span></h3>
+
         <br>
-       
-        <div class="form-outline">
-            <button  class="btn same-btn" (click)="openPopup()">AddSlider</button>
-            <input type="search" id="form1" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
-          </div>
-        <br>
-        <table class="table table-bordered">
+        <table class="table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -64,7 +61,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let img of imagist |  filter:searchText; index as i">
+                <tr *ngFor="let img of imagist; index as i">
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{img.imageTitle}}</td>
                     <td>{{img.imageDesc}}</td>

@@ -4,12 +4,16 @@
 
 .slider-wrap{
     position: relative;
-   
+    /* overflow:hidden;
+    height: 150px; */
 }
 .slider-main{
+    /* position: absolute; */
+    /* width: 200%; */
     display: flex;
     overflow: hidden;
     height: 200px;
+    /* width: 150px; */
 }
  .item{
     display: inline-block;
@@ -40,6 +44,7 @@
     position: absolute;
     right: -5px;
     top: 38%;
+
 }
 
 
@@ -57,36 +62,21 @@
     width: 60px;
   }
 
-  
+  /* .btn-add{
+    background: #0d8ea1;
+    border-radius: 5px;
+  } */
+
   .table-responsive{
     padding: 1rem;
   }
 
   .same-btn{
     background: #0d8ea1;
-    margin-left: 1rem;
+
   }
 
   .same-btn:hover{
     background-color: #0d8ea1;
    
-}
-
-.form-outline{
-  display: flex;
-  justify-content: space-between;
-}
-
-.text-center{
-  margin-top: 2rem;
-  margin-right: 4rem;
-  font-size: 35px;
-}
-
-.form-control{
-  flex-basis: 20%;
-}
-
-.table-bordered{
-  text-align: center;
-}
+   }

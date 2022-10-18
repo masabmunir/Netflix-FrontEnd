@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AuthserviceService } from '../sharedservice/authservice.service';
-import { ToggleService } from '../sharedservice/toggle.service';
 import { UserdataService } from '../sharedservice/userdata.service';
 
 @Component({
@@ -9,29 +8,24 @@ import { UserdataService } from '../sharedservice/userdata.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  isSidebarShow = true;
-
+  @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter;
   menu: any;
   userName: any
+
   constructor(private userdata: UserdataService,
-    private auth: AuthserviceService,
-    private toggleSidebarService: ToggleService) {
-      
+    private auth: AuthserviceService) {
     if (this.userdata.getId()) {
       this.userdata.getUser(this.userdata.getId()).subscribe((res: any) => {
         this.userName = res.name;
       })
     }
-    this.toggleSidebarService.isSidebarShowEvent.subscribe((data) => {
-      this.isSidebarShow = data
-    })
   }
 
   ngOnInit(): void {
   }
 
   toggleSidebar() {
-    this.toggleSidebarService.toggleSidebar();
+    this.toggleSideBarForMe.emit();
   }
 
   logOut() {

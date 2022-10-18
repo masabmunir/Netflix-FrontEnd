@@ -26,8 +26,9 @@ import { PrevDirective } from './directive/prev.directive';
 import { ToastrModule } from 'ngx-toastr';
 import { EditImageComponent } from './edit-image/edit-image.component';
 import { MoviesComponent } from './movies/movies.component';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
+import { VideosComponent } from './videos/videos.component';
+import { UserVideoService } from './sharedservice/videos.service';
+import { SongsComponent } from './songs/songs.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     PrevDirective,
     EditImageComponent,
     MoviesComponent,
+    VideosComponent,
+    SongsComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,12 +62,12 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatIconModule,
     MatToolbarModule,
     MatMenuModule,
-    Ng2SearchPipeModule,
     MDBBootstrapModule.forRoot(),
     ToastrModule.forRoot(),
 
+
  ],
-  providers: [],
+  providers: [UserVideoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
