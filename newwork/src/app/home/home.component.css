@@ -1,0 +1,49 @@
+.button {
+    margin-left: 49rem;
+}
+
+.table-responsive {
+    padding: 1rem;
+}
+
+.add-user {
+    margin-left: -48rem;
+    margin-top: 1rem
+}
+
+.same-btn {
+    background-color: #0d8ea1;
+    margin-left: 1rem;
+}
+
+.same-btn:hover {
+    background-color: #0d8ea1;
+
+}
+
+.form-outline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table {
+    margin-top: 1rem;
+}
+
+.text-center {
+    margin: 0;
+    margin-right: 10rem;
+    font-size: 35px;
+}
+
+.mt-5 {
+    margin-top: 2rem !important;
+}
+
+.form-control {
+    flex-basis: 20%;
+}
+
+.table-bordered{
+    text-align: center;
+}

@@ -1,0 +1,19 @@
+<h1 class="m-2">Edit Image</h1>
+<hr>
+<form  (submit)="onSubmit()">
+    <div class="m-2">
+        <label for="name">Image Title:</label><br>
+        <input type="text" id="name" placeholder="Title" value="" formControlName="imageTitle" class="form-control w-50 " required >
+    </div>
+    <div class="m-2">
+        <label for="desc">Image Description:</label><br>
+        <textarea id="desc" name="desc" value="" rows="2" placeholder="Description" formControlName="imageDesc" class="form-control w-50" required></textarea>
+    </div>
+    <hr>
+    <div class="m-2">
+        <input (change)="onFileSelected($event)" type="file">
+    </div>
+    <div class="mt-3 m-2">
+        <button class="btn btn-primary" type="submit">Update</button>
+    </div>
+</form>

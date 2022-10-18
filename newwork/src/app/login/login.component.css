@@ -1,0 +1,40 @@
+.main {
+    /* background-color:bisque; */
+    background-image: url('../../assets/images.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+}
+
+
+
+.container {
+    /* border:1px solid black; */
+    /* background-color: beige; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-left: 10rem;
+    width: 60%;
+    padding: 115px;
+}
+
+
+.login {
+   color: white;
+}
+
+.ran{
+    color: white;
+}
+
+.ran:hover{
+    color: white;
+}
+.form-control {
+    width: 300%;
+}

@@ -1,0 +1,80 @@
+<!--- Modal Code Start -->
+
+
+<form [formGroup]="addImage" (ngSubmit)="isUpdate ? updateData() : saveData()">
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Detail</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="m-2">
+                        <label for="name">Image Title:</label><br>
+                        <input type="text" id="name" placeholder="Title" value="" class="form-control w-100" formControlName="imageTitle" required name="imageTitle">
+                    </div>
+                    <div class="m-2">
+                        <label for="desc">Image Description:</label><br>
+                        <textarea id="desc" name="desc" value="" rows="2" placeholder="Description"
+                            class="form-control w-100" required name="imageDesc" formControlName="imageDesc"></textarea>
+                    </div>
+
+                    <div class="m-2">
+                        <input type='file' (change)="readURL($event);" formControlName="imageURl"/>
+                        <img class="img" id="blah" [src]="imageSrc" />
+                    </div>
+
+                    <div class="m-2">
+                        <button class="btn btn-success" (click)="closePopup()" >Submit</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" (click)="closeModal()">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!---Modal End Here -->
+
+<div class="card main-card mb-3">
+    
+    <div class="table-responsive">
+        <h3 class="text-center"><span>Slider Content</span></h3>
+        <br>
+       
+        <div class="form-outline">
+            <button  class="btn same-btn" (click)="openPopup()">AddSlider</button>
+            <input type="search" id="form1" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
+          </div>
+        <br>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">URL</th>
+                    <th scope="col">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let img of imagist |  filter:searchText; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{img.imageTitle}}</td>
+                    <td>{{img.imageDesc}}</td>
+                    <td><img src="{{img.imageURl}}" alt=""></td>
+                    <td>
+                        <a class="btn same-btn btn-sm" (click)="updateView(img)"><i></i>Edit</a> &nbsp;
+                        <a class="btn btn-danger btn-sm" (click)="dellUser(img._id)"><i></i>Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

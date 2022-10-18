@@ -1,0 +1,93 @@
+
+<form [formGroup]="addMovie" (ngSubmit)="isUpdate ? updateData() :saveData()">
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Detail</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="m-2">
+                        <label for="desc">Movie Title:</label><br>
+                        <input id="desc" name="desc" value="" rows="2" placeholder="moviesTitle"
+                            class="form-control w-100" required name="moviesTitle" formControlName="moviesTitle">
+                    </div>
+
+                    <div class="m-2">
+                        <label for="desc">Movie Detail:</label><br>
+                        <input id="desc" name="desc" value="" rows="2" placeholder="moviesDetail"
+                            class="form-control w-100" required name="moviesDetail" formControlName="moviesDetail">
+                    </div>
+
+                    <div class="m-2 dropdown">
+                        <label for="desc">Movie Categories:</label><br>
+
+
+                        <input id="desc" name="desc" value="" rows="2" placeholder="moviesCategories"
+                            class="form-control w-100" required name="moviesCategories"
+                            formControlName="moviesCategories">
+
+                    </div>
+
+                    <div class="m-2">
+                        <video [src]="url" *ngIf="format==='video' && url" height="200" width="200" controls></video>
+                        <br />
+                        <input type='file' (change)="onSelectFile($event)" />
+                    </div>
+
+                    <div class="m-2">
+                        <button class="btn btn-success" (click)="closePopup()">Submit</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" (click)="closeModal()">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<!-- Modal end here -->
+<div class="card main-card mb-3">
+
+    <div class="table-responsive">
+
+        <h3 class="text-center"> Movies Content </h3>
+        <br>
+        
+        <div class="form-outline">
+            <button class="btn same-btn" (click)="openPopup()">Add Movies</button>
+            <input type="search" id="form1" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
+        </div>
+        <br>
+        <table class="table table-bordered" id="employeedataTable">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">moviesTitle</th>
+                    <th scope="col">moviesDetail</th>
+                    <th scope="col">moviesCategories</th>
+                    <th scope="col">moviesPoster</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let mov of movlist |  filter:searchText; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{mov.moviesTitle}}</td>
+                    <td>{{mov.moviesDetail}}</td>
+                    <td>{{mov.moviesCategories}}</td>
+                    <td><video class="video" src="{{mov.moviesURl}}" alt=""></video></td>
+                    <td>
+                        <a class="btn same-btn btn-sm" (click)="updateView(mov)"><i></i>Edit</a> &nbsp;
+                        <a class="btn btn-danger btn-sm" (click)="dellUser(mov._id)"><i></i>Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

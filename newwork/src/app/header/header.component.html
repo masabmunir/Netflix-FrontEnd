@@ -1,0 +1,32 @@
+<div class="main">
+    <button class="menu" mat-icon-button *ngIf="!isSidebarShow" (click)="toggleSidebar()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="my-content">
+    <div class="form-outline">
+     
+    </div>
+    <div class="logout_section">
+      <span class="bell-icon" style="font-size: 2rem;">
+        <mat-icon>notifications_none</mat-icon>
+      </span>&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="material-icons">chat</span>
+      <div class="row mr-2 ml-auto">
+        <ul>
+          <li>
+            <button mat-button [matMenuTriggerFor]="menu" class="user mt-2 d-flex align-items-center">
+              <img src="../../assets/user-png.png" class="user-image mr-1 p-2" />
+              {{userName}}
+            </button>
+            <mat-menu #menu="matMenu">
+              <button (click)="logOut()" mat-menu-item>
+              <mat-icon>logout</mat-icon>
+              Logout
+              </button>
+            </mat-menu>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
