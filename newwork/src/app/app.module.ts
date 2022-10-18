@@ -26,7 +26,6 @@ import { PrevDirective } from './directive/prev.directive';
 import { ToastrModule } from 'ngx-toastr';
 import { EditImageComponent } from './edit-image/edit-image.component';
 import { MoviesComponent } from './movies/movies.component';
-// import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -59,7 +58,7 @@ import { MoviesComponent } from './movies/movies.component';
     MatIconModule,
     MatToolbarModule,
     MatMenuModule,
-     MDBBootstrapModule.forRoot(),
+    MDBBootstrapModule.forRoot(),
     ToastrModule.forRoot(),
 
  ],

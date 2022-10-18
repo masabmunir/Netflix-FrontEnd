@@ -58,7 +58,7 @@
 
         <h3 class="text-center"> Movies Content </h3>
         <br>
-        
+
         <div class="form-outline">
             <button class="btn same-btn" (click)="openPopup()">Add Movies</button>
             <input type="search" id="form1" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
@@ -76,7 +76,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let mov of movlist |  filter:searchText; index as i">
+                <tr *ngFor="let mov of movlist ; index as i">
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{mov.moviesTitle}}</td>
                     <td>{{mov.moviesDetail}}</td>

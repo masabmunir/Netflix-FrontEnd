@@ -42,11 +42,11 @@
 <!---Modal End Here -->
 
 <div class="card main-card mb-3">
-    
+
     <div class="table-responsive">
         <h3 class="text-center"><span>Slider Content</span></h3>
         <br>
-       
+
         <div class="form-outline">
             <button  class="btn same-btn" (click)="openPopup()">AddSlider</button>
             <input type="search" id="form1" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
@@ -64,7 +64,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let img of imagist |  filter:searchText; index as i">
+                <tr *ngFor="let img of imagist ; index as i">
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{img.imageTitle}}</td>
                     <td>{{img.imageDesc}}</td>
