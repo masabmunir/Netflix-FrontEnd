@@ -25,7 +25,7 @@ const routes: Routes = [
     { path: 'update/:id', component: UpdateComponent },
     { path: 'adduser', component: AdduserComponent },
     {path:'movies',component:MoviesComponent},
-    
+
     {path:'editimage/:id',component:EditImageComponent}]
   },
   { path: 'header', component: HeaderComponent },
