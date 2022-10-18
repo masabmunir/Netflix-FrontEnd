@@ -1,17 +1,11 @@
 <div class="card main-card mb-3">
-    
-    
+    <div class="add-user">
+    <a routerLink="../adduser" class="btn same-btn button">Add User </a>
+     </div>
     <div class="table-responsive">
-      <h3 class="text-center mt-5"><span>User Details</span></h3>
+      <h3 class="text-center card-header"> User Details </h3>
       <br>
-      
-      <div class="form-outline">
-        <button routerLink="../adduser" class="btn same-btn">Add User </button>
-        <input type="search" id="form1" class="form-control" placeholder="Search" [(ngModel)]="searchText"  />
-      </div>
-      <br>
-      
-      <table class="table table-bordered" id="employeedataTable">
+      <table class="table" id="employeedataTable">
         <thead>   
           <tr>
             <th scope="col">#</th>
@@ -23,7 +17,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let emp of empData |  filter:searchText; index as i">
+          <tr *ngFor="let emp of empData; index as i">
             <th scope="row">{{ i + 1 }}</th>
             <td>{{emp.name}}</td>
             <td>{{emp.email}}</td>

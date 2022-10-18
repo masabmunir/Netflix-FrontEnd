@@ -1,6 +1,6 @@
 .main {
     /* background-color:bisque; */
-    background-image: url('../../assets/images.jpeg');
+    background-image: url('../../assets/SL-121019-25870-23.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     margin: 0px;
@@ -19,22 +19,54 @@
     justify-content: center;
     margin: auto;
     margin-left: 10rem;
-    width: 60%;
+    width: 75%;
     padding: 115px;
+
+
+}
+form{
+
+  padding: 35px;
+  opacity: 80%;
+  background-color: rgb(22, 22, 78);
+  position: relative;
+
 }
 
-
+form div{
+  opacity: 1;
+}
 .login {
    color: white;
+   text-align: center;
+
+
 }
 
 .ran{
     color: white;
+    font-weight: bold;
 }
 
 .ran:hover{
     color: white;
 }
 .form-control {
-    width: 300%;
+    width: 100%;
+
+}
+.btnSubmit{
+  background-color: rgb(23, 132, 136);
+width: 400px;
+
+}
+.btnSubmit:hover{
+  background-color: rgb(23, 132, 136);
+  box-shadow: rgb(59, 165, 168) 1px;
+}
+
+.endText{
+  color: white;
+  margin-top: 20px;
+
 }

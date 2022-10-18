@@ -1,4 +1,5 @@
-
+<button style="margin: 20px; padding: 8px" type="button" class="btn same-btn" (click)="openPopup()">Add
+    Movies</button>
 <form [formGroup]="addMovie" (ngSubmit)="isUpdate ? updateData() :saveData()">
     <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
         <div class="modal-dialog" role="document">
@@ -53,18 +54,13 @@
 
 <!-- Modal end here -->
 <div class="card main-card mb-3">
-
+    <div class="card-header">
+        <h3 class="text-center"> Movies Content </h3>
+    </div>
     <div class="table-responsive">
 
-        <h3 class="text-center"> Movies Content </h3>
         <br>
-        
-        <div class="form-outline">
-            <button class="btn same-btn" (click)="openPopup()">Add Movies</button>
-            <input type="search" id="form1" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
-        </div>
-        <br>
-        <table class="table table-bordered" id="employeedataTable">
+        <table class="table" id="employeedataTable">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -76,7 +72,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let mov of movlist |  filter:searchText; index as i">
+                <tr *ngFor="let mov of movlist; index as i">
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{mov.moviesTitle}}</td>
                     <td>{{mov.moviesDetail}}</td>

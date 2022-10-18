@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ToggleService } from '../sharedservice/toggle.service';
 
 @Component({
   selector: 'app-list',
@@ -7,15 +6,16 @@ import { ToggleService } from '../sharedservice/toggle.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  isSidebarShow = true;
-  constructor(private toggleSidebarToggle: ToggleService) {
-    this.toggleSidebarToggle.isSidebarShowEvent.subscribe((data) => {
-      this.isSidebarShow = data
-    })
-  }
+  sideBarOpen = true;
+  constructor() { }
 
   ngOnInit(): void {
-
   }
 
+  sideBarToggler(){
+   this.sideBarOpen=!this.sideBarOpen;
+  //  console.log('uig')
+  }
+
+  // new(er) 
 }

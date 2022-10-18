@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
   imageSrc: string;
   isUpdate: boolean = false;
   imgId :any = 0
-  searchText:any
+
   constructor(private userImages: UserImagesService,
     private myFormBuilder: FormBuilder) { }
 
