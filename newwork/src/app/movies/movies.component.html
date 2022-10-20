@@ -67,16 +67,23 @@
         <table class="table table-bordered" id="employeedataTable">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">moviesTitle</th>
-                    <th scope="col">moviesDetail</th>
-                    <th scope="col">moviesCategories</th>
-                    <th scope="col">moviesPoster</th>
+                    <th scope="col">id</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Detail</th>
+                    <th scope="col">Categories</th>
+                    <th scope="col">Poster</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let mov of movlist |  filter:searchText; index as i">
+                <tr *ngFor="let mov of movlist | paginate
+          : {
+              itemsPerPage: tableSize,
+              currentPage: page,
+              totalItems: count
+            };
+           
+                filter:searchText; index as i">
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{mov.moviesTitle}}</td>
                     <td>{{mov.moviesDetail}}</td>
@@ -89,5 +96,9 @@
                 </tr>
             </tbody>
         </table>
+        <div class="d-flex justify-content-center">
+            <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+            </pagination-controls>
+          </div>
     </div>
 </div>
