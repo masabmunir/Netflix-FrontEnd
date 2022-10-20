@@ -1,65 +1,67 @@
-
-img{
+img {
    height: 65px;
-    width: 141px;
-    margin: 0.5rem;
-}
- .mat-icon{
-    vertical-align: center;
-    margin-right: 1rem;
- }
-
- .mat-divider{
-    border-top-width: 2px;
-    border-color: black;
- }
-
- 
- :host::ng-deep mat-list-item-contant{
-    border-radius: 5px;
-    margin: 0 8px;
-    /* background: #2c3344 !important; */
+   /* margin: 0.5rem; */
+   width: 94%;
 }
 
- .mat-list-item{
-    color:white !important;
-    font-size: 0.8rem;
-    height: 44px !important;
-    margin-bottom: 4px;    
- }
+.mat-icon {
+   vertical-align: center;
+   margin-right: 1rem;
+   color:white
+}
+
+.mat-divider {
+   border-top-width: 2px;
+   border-color: white
+}
 
 
- :host ::ng-deep mat-list-item-contant{
-    /* background: #2c3344 !important;    */
- }
+:host::ng-deep mat-list-item-contant {
+   border-radius: 5px;
+   margin: 0 8px;
+   /* background: #2c3344 !important; */
+}
 
- .list-item-active{
-  /* color:#2c3344 !important; */
-  
- }
+.mat-list-item {
+   color: white !important;
+   font-size: 0.8rem;
+   height: 44px !important;
+   margin-bottom: 4px;
+}
 
- .mat-subheader{
-    color:black;
-    font-size: 1rem;
-    font-weight: bold;
-    letter-spacing: 1px;
- }
 
- .mat-list-item{
-    color: black !important;
- }
+/* :host ::ng-deep mat-list-item-contant {} */
 
- .button-hover{
-font-size: 1rem;
- }
+/* .list-item-active {} */
 
- /* .button-hover:hover{
-  color:#818cf8;
- }
+.mat-subheader {
+   color: black;
+   font-size: 1rem;
+   font-weight: bold;
+   letter-spacing: 1px;
+}
 
- .mat-list-item-content:hover{
-  color:#818cf8;
+.mat-list-item {
+   color: black !important;
+}
 
- }
+.button-hover {
+   font-size: 1rem;
+   color:white
+}
 
-  */
+.mt-2{
+color: white;
+font-size: 23px;
+}
+
+.menu{
+   /* margin-left: 13rem; */
+   border: none;
+   background-color: #0d8ea1;
+
+}
+
+.clear{
+   margin-left: 12rem;
+}

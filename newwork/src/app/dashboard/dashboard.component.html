@@ -43,10 +43,22 @@
 <!---Modal End Here -->
 
 <div class="card main-card mb-3">
+
     <div class="card-header">
       <h3 class="text-center"> Slider Content </h3>
     </div>
     <div class="table-responsive">
+
+
+
+    <div class="table-responsive">
+        <h3 class="text-center"><span>Slider Content</span></h3>
+        <br>
+
+        <div class="form-outline">
+            <button  class="btn same-btn" (click)="openPopup()">AddSlider</button>
+            <input type="search" id="form1" class="form-control" placeholder="Search">
+          </div>
 
         <br>
         <table class="table">
@@ -61,7 +73,11 @@
                 </tr>
             </thead>
             <tbody>
+
                 <tr *ngFor="let img of imagist; index as i">
+
+                <tr *ngFor="let img of imagist ; index as i">
+
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{img.imageTitle}}</td>
                     <td>{{img.imageDesc}}</td>

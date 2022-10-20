@@ -26,9 +26,13 @@ import { PrevDirective } from './directive/prev.directive';
 import { ToastrModule } from 'ngx-toastr';
 import { EditImageComponent } from './edit-image/edit-image.component';
 import { MoviesComponent } from './movies/movies.component';
+
 import { VideosComponent } from './videos/videos.component';
 import { UserVideoService } from './sharedservice/videos.service';
 import { SongsComponent } from './songs/songs.component';
+
+
+
 
 @NgModule({
   declarations: [
