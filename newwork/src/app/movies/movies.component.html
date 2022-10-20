@@ -76,22 +76,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let mov of movlist | paginate
-          : {
+                <tr *ngFor="let mov of movlist | paginate:{
               itemsPerPage: tableSize,
               currentPage: page,
               totalItems: count
-            };
-           
-                filter:searchText; index as i">
+            }|filter:searchText; index as i">
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{mov.moviesTitle}}</td>
                     <td>{{mov.moviesDetail}}</td>
                     <td>{{mov.moviesCategories}}</td>
                     <td><video class="video" src="{{mov.moviesURl}}" alt=""></video></td>
-                    <td>
-                        <a class="btn same-btn btn-sm edit" (click)="updateView(mov)"><i></i>Edit</a> &nbsp;
-                        <a class="btn btn-danger btn-sm" (click)="dellUser(mov._id)"><i></i>Delete</a>
+                    
+                    <td class="btn-group" role="group">
+                        <a class="btn  btn-sm edit" (click)="updateView(mov)"><i></i>Edit</a> &nbsp;
+                        <a class="btn danger btn-sm" (click)="dellUser(mov._id)"><i></i>Delete</a>
                     </td>
                 </tr>
             </tbody>

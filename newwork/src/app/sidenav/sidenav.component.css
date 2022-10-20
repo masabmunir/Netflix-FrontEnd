@@ -1,7 +1,7 @@
 img {
    height: 65px;
-   /* margin: 0.5rem; */
-   width: 94%;
+   width: 113%;
+   margin-left: -1rem
 }
 
 .mat-icon {
@@ -63,5 +63,9 @@ font-size: 23px;
 }
 
 .clear{
-   margin-left: 12rem;
+   margin-left: 13rem;
+}
+
+.logo{
+
 }

@@ -81,3 +81,8 @@ button{
 .logout_section{
     color: white;
 }
+
+img {
+    height: 50px;
+    width: 94%;
+ }

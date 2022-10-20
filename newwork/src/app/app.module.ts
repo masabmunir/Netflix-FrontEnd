@@ -28,8 +28,7 @@ import { EditImageComponent } from './edit-image/edit-image.component';
 import { MoviesComponent } from './movies/movies.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { SortPipe } from './pipe/sort.pipe';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -47,7 +46,6 @@ import { SortPipe } from './pipe/sort.pipe';
     PrevDirective,
     EditImageComponent,
     MoviesComponent,
-    SortPipe,
   ],
   imports: [
     BrowserModule,
@@ -64,9 +62,10 @@ import { SortPipe } from './pipe/sort.pipe';
     MatMenuModule,
     Ng2SearchPipeModule,
     NgxPaginationModule,
+    MatDialogModule,
     MDBBootstrapModule.forRoot(),
     ToastrModule.forRoot(),
-
+     
  ],
   providers: [],
   bootstrap: [AppComponent]

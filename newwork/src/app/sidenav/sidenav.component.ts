@@ -17,4 +17,6 @@ export class SidenavComponent implements OnInit {
   toggleSidebar() {
     this.toggleSidebarService.toggleSidebar();
   }
+
+
 }

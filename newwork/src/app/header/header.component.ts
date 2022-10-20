@@ -10,13 +10,13 @@ import { UserdataService } from '../sharedservice/userdata.service';
 })
 export class HeaderComponent implements OnInit {
   isSidebarShow = true;
-
+  display = false;
+  isImagebarShown = false;
   menu: any;
   userName: any
   constructor(private userdata: UserdataService,
     private auth: AuthserviceService,
     private toggleSidebarService: ToggleService) {
-      
     if (this.userdata.getId()) {
       this.userdata.getUser(this.userdata.getId()).subscribe((res: any) => {
         this.userName = res.name;
@@ -25,6 +25,11 @@ export class HeaderComponent implements OnInit {
     this.toggleSidebarService.isSidebarShowEvent.subscribe((data) => {
       this.isSidebarShow = data
     })
+
+    this.toggleSidebarService.isImageShownEvent.subscribe((res) => {
+      this.isImagebarShown = res;
+    })
+
   }
 
   ngOnInit(): void {
@@ -34,8 +39,9 @@ export class HeaderComponent implements OnInit {
     this.toggleSidebarService.toggleSidebar();
   }
 
+
   logOut() {
     this.auth.logOut();
-
   }
+
 }

@@ -8,10 +8,14 @@ export class ToggleService {
 
   constructor() {
     this.isSidebarShowEvent.next(true)
+    this.isImageShownEvent.next(false);
   }
 
   isSidebarShowEvent = new Subject<boolean>();
   isSidebarShow = true;
+
+  isImageShownEvent = new Subject<boolean>()
+  isImageShown = false;
 
 
   toggleSidebar() {
@@ -22,5 +26,6 @@ export class ToggleService {
       this.isSidebarShowEvent.next(true)
     }
   }
+
 
 }
