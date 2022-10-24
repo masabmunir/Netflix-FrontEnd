@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter,Output, OnDestroy } from '@angular/core';
+import { ToggleService } from '../sharedservice/toggle.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private toggleSidebarService: ToggleService) { }
 
   ngOnInit(): void {
   }
-
   
-
   
+  toggleSidebar() {
+    this.toggleSidebarService.toggleSidebar();
+    this.toggleSidebarService.display.next(true);
+  }
+
 }

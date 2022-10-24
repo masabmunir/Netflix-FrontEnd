@@ -1,10 +1,13 @@
 <div class="main">
-  <button class="menu" mat-icon-button (click)="toggleSidebar()">
-    <mat-icon>menu</mat-icon>
-  </button>
+  <div class="logo-image">
+    <button class="menu" mat-icon-button *ngIf="!isSidebarShow" (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+      <img *ngIf="display" src="../.././assets/netflix-logo-png-2573.png"/>    
+  </div>
   <div class="my-content">
     <div class="form-outline">
-      <input type="search" id="form1" class="form-control" placeholder="Search" />
+
     </div>
     <div class="logout_section">
       <span class="bell-icon" style="font-size: 2rem;">
@@ -20,7 +23,7 @@
             </button>
             <mat-menu #menu="matMenu">
               <button (click)="logOut()" mat-menu-item>
-                <mat-icon>Exist to App</mat-icon>
+                <mat-icon>logout</mat-icon>
                 Logout
               </button>
             </mat-menu>

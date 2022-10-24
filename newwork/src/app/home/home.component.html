@@ -1,35 +1,106 @@
-<div class="card main-card mb-3">
-    <div class="add-user">
-    <a routerLink="../adduser" class="btn same-btn button">Add User </a>
-     </div>
-    <div class="table-responsive">
-      <h3 class="text-center card-header"> User Details </h3>
-      <br>
-      <table class="table" id="employeedataTable">
-        <thead>   
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Role </th>
-            <th scope="col">Contact</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let emp of empData; index as i">
-            <th scope="row">{{ i + 1 }}</th>
-            <td>{{emp.name}}</td>
-            <td>{{emp.email}}</td>
-            <td>{{emp.role}}</td>
-            <td>{{emp.contact}}</td>
-
-            <td>
-                <a routerLink="../update/{{emp._id}}" class="btn same-btn btn-sm" >Edit</a> &nbsp;
-                <a class="btn btn-danger btn-sm" (click)="delUser(emp._id)">Delete</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+<form [formGroup]="addUser" (ngSubmit)="isUpdate ? updateData() :saveData()">
+  <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add Detail</h4>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3 mt-3">
+            <label for="name">Name:</label>
+            <input type="name" class="form-control" id="name" formControlName="name" placeholder="Enter name"
+              name="name">
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter email"
+              name="email">
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="role">Role:</label>
+            <select name="role" id="role" class="form-control" formControlName="role">
+              <option value=""></option>
+              <option value="angular">Angular Developer</option>
+              <option value="react">React Developer</option>
+              <option value="flask">Flask Developer</option>
+              <option value="python">Python Developer</option>
+            </select>
+          </div>
+          <div class="mb-3 mt-3 ">
+            <label for="contact">Contact:</label>
+            <input type="contact" class="form-control" id="contact" formControlName="contact"
+              placeholder="Enter contact" name="contact">
+          </div>
+          <div class="mb-3">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" formControlName="password" placeholder="Enter password"
+              name="pswd">
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="closeModal()">
+            Close
+          </button>
+        </div>
+      </div>
     </div>
   </div>
+</form>
+
+
+<!-- Modal end here -->
+<div class="card main-card mb-3">
+
+  <div class="table-responsive">
+    <h3 class="text-center mt-5"><span>User Details</span></h3>
+    <br>
+    <!-- routerLink="../adduser" -->
+    <div class="form-outline">
+      <button (click)="openPopup()" class="btn add-user">Add User </button>
+      <input type="search" id="form1" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
+    </div>
+    <br>
+
+    <table class="table table-bordered" id="employeedataTable">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Role </th>
+          <th scope="col">Contact</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of empData | paginate:{
+              itemsPerPage: tableSize,
+              currentPage: page,
+              totalItems: count
+            }|filter:searchText;index as i">
+          <th scope="row">{{ emp._id }}</th>
+          <td>{{emp.name}}</td>
+          <td>{{emp.email}}</td>
+          <td>{{emp.role}}</td>
+          <td>{{emp.contact}}</td>
+
+          <td class="btn-group" role="group">
+            <button class="btn btn-sm edit-btn" (click)="updateView(emp)">Edit</button> &nbsp;
+            <button class="btn danger btn-sm" (click)="delUser(emp._id)">Delete</button>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+      <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+
+      </pagination-controls>
+    </div>
+  </div>
+</div>
+
+<!-- routerLink="../update/{{emp._id}}" -->

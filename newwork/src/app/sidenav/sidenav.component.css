@@ -1,65 +1,48 @@
 
-img{
+img {
    height: 65px;
-    width: 141px;
-    margin: 0.5rem;
-}
- .mat-icon{
-    vertical-align: center;
-    margin-right: 1rem;
- }
-
- .mat-divider{
-    border-top-width: 2px;
-    border-color: black;
- }
-
- 
- :host::ng-deep mat-list-item-contant{
-    border-radius: 5px;
-    margin: 0 8px;
-    /* background: #2c3344 !important; */
+   width: 100%;
+   margin-left: -1rem
 }
 
- .mat-list-item{
-    color:white !important;
-    font-size: 0.8rem;
-    height: 44px !important;
-    margin-bottom: 4px;    
- }
+.mat-icon {
+   vertical-align: center;
+   margin-right: 1rem;
+   color:white
+}
+
+.mt-2{
+   margin-left: 3rem;
+   margin-bottom: 1rem;
+}
+
+span{
+   margin-left: 1rem;
+}
 
 
- :host ::ng-deep mat-list-item-contant{
-    /* background: #2c3344 !important;    */
- }
+.button-hover {
+   font-size: 1rem;
+   color:white
+} 
 
- .list-item-active{
-  /* color:#2c3344 !important; */
-  
- }
+ .mt-2{
+color: white;
+font-size: 23px;
+}
 
- .mat-subheader{
-    color:black;
-    font-size: 1rem;
-    font-weight: bold;
-    letter-spacing: 1px;
- }
+.menu{
 
- .mat-list-item{
-    color: black !important;
- }
+   border: none;
+   background-color: #0d8ea1;
+   
+}
 
- .button-hover{
-font-size: 1rem;
- }
+.clear{
+   margin-left: 12rem;
+}
 
- /* .button-hover:hover{
-  color:#818cf8;
- }
+mat-expansion-panel{
+   background-color: #0d8ea1;
+}
 
- .mat-list-item-content:hover{
-  color:#818cf8;
-
- }
-
-  */

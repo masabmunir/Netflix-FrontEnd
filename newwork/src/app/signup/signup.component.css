@@ -1,10 +1,10 @@
 .main{
-    background-image: url('../../assets/SL-121019-25870-23.jpg');
+    background-image: url('../../assets/images.jpeg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     margin: 0px;
     padding: 0px;
-    height: auto;
+    height: 100vh;
 }
 
 .container{
@@ -14,25 +14,12 @@
     justify-content: center;
     margin: auto;
     margin-left: 9rem;
-    width: 80%;
+    width: 60%;
     padding: 60px;
-
-}
-
-form{
-
-  padding: 50px;
-  opacity: 80%;
-  background-color: rgb(22, 22, 78);
-  position: relative;
-  margin-top: 30px;
-  padding-top: 40px;
-
-
 }
 
 .form-control {
-    width: 100%;
+    width: 300%;
 }
 
 .heading{
@@ -41,35 +28,9 @@ form{
 
 .text-center{
     color: white;
-    text-align: center;
-    margin-left: -100px;
 }
 
 .same{
     color: white;
 }
-.btnSubmit{
-  background-color: rgb(23, 132, 136);
-width: 320px;
 
-}
-.btnSubmit:hover{
-  background-color: rgb(23, 132, 136);
-  box-shadow: rgb(59, 165, 168) 1px;
-}
-
-.endText{
-  color: white;
-
-}
-.link{
-
-  text-decoration: none;
-  color: white;
-
-}
-a:link{
-  color: white;
-  margin-bottom: 5px;
-  font-weight: bold;
-}

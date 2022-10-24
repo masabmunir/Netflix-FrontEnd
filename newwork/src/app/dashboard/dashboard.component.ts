@@ -15,7 +15,16 @@ export class DashboardComponent implements OnInit {
   collection: any = [];
   imageSrc: string;
   isUpdate: boolean = false;
-  imgId :any = 0
+  imgId: any = 0
+  searchText: any
+
+  // For Pagination
+  POSTS : Array<any> = []
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 3;
+  tableSizes: any = [3, 6, 9, 12];
+  // End's Here
 
   constructor(private userImages: UserImagesService,
     private myFormBuilder: FormBuilder) { }
@@ -34,9 +43,12 @@ export class DashboardComponent implements OnInit {
   }
 
   userData() {
-    this.userImages.getData().subscribe(res => {
+    this.userImages.getData().subscribe((res : any) => {
       console.log("resUser", res);
-      this.imagist = res;
+      this.imagist=res;
+      this.POSTS = res;
+      this.count = res.length
+      this.onTableDataChange(this.page)
     }, (err) => {
       console.log("error is " + err)
     })
@@ -44,11 +56,15 @@ export class DashboardComponent implements OnInit {
   }
 
   dellUser(item: any) {
+    if(confirm("Are you sure ")){
     this.collection.splice(item - 1, 1);
     this.userImages.delUser(item).subscribe((res) => {
       console.log(res);
       this.userData();
     });
+  }else{
+    console.log('data will not be deleted')
+  }
   }
 
   // Modal Code Start
@@ -59,7 +75,7 @@ export class DashboardComponent implements OnInit {
   closePopup() {
     this.displayStyle = "none";
   }
-  closeModal(){
+  closeModal() {
     this.displayStyle = "none";
   }
   //Modal Code End
@@ -113,9 +129,31 @@ export class DashboardComponent implements OnInit {
     }).subscribe((res: any) => {
       console.log(res);
       this.userData();
-    },(err)=>{
+    }, (err) => {
       console.log("Not Working" + err)
     })
 
   }
+
+  onTableDataChange(event: any) {
+   
+    let startIndex = (event - 1) * this.tableSize
+    let endingIndex = event * this.tableSize
+    let myArr = this.POSTS.filter((item: any, index: any) => { if (index >= startIndex && index < endingIndex) return item })
+    this.imagist = myArr.sort(function (a: any, b: any) {
+      var textA = a.imageTitle.toUpperCase();
+      var textB = b.imageTitle.toUpperCase();
+      return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+    });
+
+    this.page = event;
+   
+  }
+
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+
+  }
+
 }
