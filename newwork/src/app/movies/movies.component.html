@@ -1,5 +1,4 @@
-<button style="margin: 20px; padding: 8px" type="button" class="btn same-btn" (click)="openPopup()">Add
-    Movies</button>
+
 <form [formGroup]="addMovie" (ngSubmit)="isUpdate ? updateData() :saveData()">
     <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
         <div class="modal-dialog" role="document">
@@ -54,11 +53,8 @@
 
 <!-- Modal end here -->
 <div class="card main-card mb-3">
-    <div class="card-header">
-        <h3 class="text-center"> Movies Content </h3>
-    </div>
-    <div class="table-responsive">
 
+    <div class="table-responsive">
 
         <h3 class="text-center"> Movies Content </h3>
         <br>
@@ -67,36 +63,44 @@
             <button class="btn same-btn" (click)="openPopup()">Add Movies</button>
             <input type="search" id="form1" class="form-control" placeholder="Search" />
         </div>
-
         <br>
-        <table class="table" id="employeedataTable">
+        <table class="table table-bordered" id="employeedataTable">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">moviesTitle</th>
-                    <th scope="col">moviesDetail</th>
-                    <th scope="col">moviesCategories</th>
-                    <th scope="col">moviesPoster</th>
+                    <th scope="col">id</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Detail</th>
+                    <th scope="col">Categories</th>
+                    <th scope="col">Poster</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
 
-                <tr *ngFor="let mov of movlist; index as i">
-
                 <tr *ngFor="let mov of movlist ; index as i">
+
+                <tr *ngFor="let mov of movlist | paginate:{
+              itemsPerPage: tableSize,
+              currentPage: page,
+              totalItems: count
+            }|filter:searchText; index as i">
 
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{mov.moviesTitle}}</td>
                     <td>{{mov.moviesDetail}}</td>
                     <td>{{mov.moviesCategories}}</td>
                     <td><video class="video" src="{{mov.moviesURl}}" alt=""></video></td>
-                    <td>
-                        <a class="btn same-btn btn-sm" (click)="updateView(mov)"><i></i>Edit</a> &nbsp;
-                        <a class="btn btn-danger btn-sm" (click)="dellUser(mov._id)"><i></i>Delete</a>
+
+                    <td class="btn-group" role="group">
+                        <a class="btn  btn-sm edit" (click)="updateView(mov)"><i></i>Edit</a> &nbsp;
+                        <a class="btn danger btn-sm" (click)="dellUser(mov._id)"><i></i>Delete</a>
                     </td>
                 </tr>
             </tbody>
         </table>
+        <div class="d-flex justify-content-center">
+            <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+            </pagination-controls>
+          </div>
     </div>
 </div>

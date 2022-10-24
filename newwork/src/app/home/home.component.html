@@ -1,20 +1,19 @@
 <div class="card main-card mb-3">
-
+<<<<<<<<< Temporary merge branch 1
     <div class="add-user">
     <a routerLink="../adduser" class="btn same-btn button">Add User </a>
      </div>
+=========
 
 
-
-
+>>>>>>>>> Temporary merge branch 2
     <div class="table-responsive">
-      <h3 class="text-center card-header"> User Details </h3>
+      <h3 class="text-center mt-5"><span>User Details</span></h3>
       <br>
-
-
-      <!-- <table class="table" id="employeedataTable">
-        <thead>    -->
-
+<<<<<<<<< Temporary merge branch 1
+      <table class="table" id="employeedataTable">
+        <thead>
+=========
 
       <div class="form-outline">
         <button routerLink="../adduser" class="btn same-btn">Add User </button>
@@ -24,7 +23,7 @@
 
       <table class="table table-bordered" id="employeedataTable">
         <thead>
-
+>>>>>>>>> Temporary merge branch 2
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
@@ -35,10 +34,11 @@
           </tr>
         </thead>
         <tbody>
-
+<<<<<<<<< Temporary merge branch 1
           <tr *ngFor="let emp of empData; index as i">
+=========
           <tr *ngFor="let emp of empData ; index as i">
-
+>>>>>>>>> Temporary merge branch 2
             <th scope="row">{{ i + 1 }}</th>
             <td>{{emp.name}}</td>
             <td>{{emp.email}}</td>

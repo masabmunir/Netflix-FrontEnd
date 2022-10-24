@@ -12,7 +12,9 @@ ul,li{
 
 .menu{
     display: flex;
-    width: max-content;
+    width: max-content; 
+    color: white;
+    margin-top: 12px;
 }
 
 button{
@@ -29,7 +31,7 @@ button{
 .user-image{
     border-radius: 50%;
     width: 50px;
-    height: 50px;
+    height: 45px;
 }
 
 .user-image-icon{
@@ -74,4 +76,19 @@ button{
 
 .mat-menu-trigger{
     font-size: 1rem;
+    color: white;
 }
+
+.logout_section{
+    color: white;
+}
+
+img {
+    height: 50px;
+    width: 94%;
+ }
+
+ .logo-image{
+    display: flex;
+    justify-items: center;
+ }

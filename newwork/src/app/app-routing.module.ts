@@ -7,13 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { UpdateComponent } from './update/update.component';
-import { AdduserComponent } from './adduser/adduser.component';
 import { AuthGuard } from './auth/auth.guard';
 import { EditImageComponent } from './edit-image/edit-image.component';
 import { MoviesComponent } from './movies/movies.component';
-import { VideosComponent } from './videos/videos.component';
-import { SongsComponent } from './songs/songs.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -24,13 +20,7 @@ const routes: Routes = [
       path: 'home', component: HomeComponent
     }, {
       path: 'dashboard', component: DashboardComponent},
-    { path: 'update/:id', component: UpdateComponent },
-    { path: 'adduser', component: AdduserComponent },
     {path:'movies',component:MoviesComponent},
-
-    {path:'videos', component:VideosComponent},
-    {path:'songs', component:SongsComponent},
-
 
     {path:'editimage/:id',component:EditImageComponent}]
   },

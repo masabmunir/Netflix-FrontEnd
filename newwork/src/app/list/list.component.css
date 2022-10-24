@@ -9,6 +9,10 @@ mat-drawer{
     background: #0d8ea1;
 }
 
+mat-drawer-content{
+
+}
+
 mat-drawer-container{
     height: 100%;
 }

@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){     
      this.userdata.loginUser(this.loginForm.value).subscribe((res : any)=>{
-      if(res.message === "login successfully")this.router.navigateByUrl('/list');
+      if(res.message === "login successfully")this.router.navigateByUrl('/list/home');
       this.toastr.success(" Welcome " + res.userdata.name);
       console.log(res)
       
@@ -44,6 +44,6 @@ export class LoginComponent implements OnInit {
      })
      
   }
-
+ 
 
 }
