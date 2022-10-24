@@ -104,3 +104,8 @@
 .btn-group{
   margin-top: 1rem;
 }
+
+.group{
+  border: 1px solid black !important;
+  
+}
