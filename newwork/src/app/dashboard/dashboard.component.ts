@@ -93,7 +93,7 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  // For Post Data 
+  // For Post Data
 
   saveData() {
     this.userImages.addData({
@@ -136,7 +136,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onTableDataChange(event: any) {
-   
+
     let startIndex = (event - 1) * this.tableSize
     let endingIndex = event * this.tableSize
     let myArr = this.POSTS.filter((item: any, index: any) => { if (index >= startIndex && index < endingIndex) return item })
@@ -147,7 +147,7 @@ export class DashboardComponent implements OnInit {
     });
 
     this.page = event;
-   
+
   }
 
   onTableSizeChange(event: any): void {

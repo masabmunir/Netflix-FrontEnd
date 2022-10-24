@@ -145,7 +145,7 @@ export class HomeComponent implements OnInit {
       console.log(res);
       // this.saveData();
       this.userData();
-      
+
     },(err)=>{
       console.log("Not Working" + err)
     })

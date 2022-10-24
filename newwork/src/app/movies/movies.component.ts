@@ -105,7 +105,7 @@ export class MoviesComponent implements OnInit {
 
   //Ends Here
 
-  // Delete Movies 
+  // Delete Movies
 
   dellUser(item: any) {
     if(confirm("Are you sure ")){
@@ -119,7 +119,7 @@ export class MoviesComponent implements OnInit {
   }
   }
 
-  // Update View 
+  // Update View
 
   updateView(mov: any) {
     this.movId = mov._id;
@@ -146,7 +146,7 @@ export class MoviesComponent implements OnInit {
     }, (err) => {
       console.log("Not Working" + err)
     })
-  
+
   }
 
   onTableDataChange(event: any) {
@@ -169,4 +169,3 @@ export class MoviesComponent implements OnInit {
   }
 
 }
-

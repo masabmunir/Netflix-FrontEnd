@@ -24,8 +24,17 @@ import { PrevDirective } from './directive/prev.directive';
 import { ToastrModule } from 'ngx-toastr';
 import { EditImageComponent } from './edit-image/edit-image.component';
 import { MoviesComponent } from './movies/movies.component';
+
+
+import { VideosComponent } from './videos/videos.component';
+import { UserVideoService } from './sharedservice/videos.service';
+import { SongsComponent } from './songs/songs.component';
+
+
+
+
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { NgxPaginationModule } from 'ngx-pagination';
+import {NgxPaginationModule} from 'ngx-pagination';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatExpansionModule} from '@angular/material/expansion';
 
@@ -43,6 +52,11 @@ import {MatExpansionModule} from '@angular/material/expansion';
     PrevDirective,
     EditImageComponent,
     MoviesComponent,
+    VideosComponent,
+    SongsComponent
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -59,11 +73,13 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatMenuModule,
     MatExpansionModule,
     Ng2SearchPipeModule,
-    NgxPaginationModule,
     MatDialogModule,
+
     MDBBootstrapModule.forRoot(),
     ToastrModule.forRoot(),
-     
+    NgxPaginationModule
+
+
  ],
   providers: [],
   bootstrap: [AppComponent]
