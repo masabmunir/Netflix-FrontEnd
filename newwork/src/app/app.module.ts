@@ -26,9 +26,9 @@ import { EditImageComponent } from './edit-image/edit-image.component';
 import { MoviesComponent } from './movies/movies.component';
 
 
-// import { VideosComponent } from './videos/videos.component';
-// import { UserVideoService } from './sharedservice/videos.service';
-// import { SongsComponent } from './songs/songs.component';
+import { VideosComponent } from './videos/videos.component';
+import { UserVideoService } from './sharedservice/videos.service';
+import { SongsComponent } from './songs/songs.component';
 
 
 
@@ -52,6 +52,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     PrevDirective,
     EditImageComponent,
     MoviesComponent,
+    VideosComponent,
+    SongsComponent
+
 
 
   ],
