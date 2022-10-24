@@ -68,7 +68,11 @@
               </tr>
           </thead>
           <tbody>
-              <tr *ngFor="let song of songs; index as i">
+              <tr *ngFor="let song of songs| paginate:{
+                itemsPerPage: tableSize,
+                currentPage: page,
+                totalItems: count
+              }|filter:searchText; index as i">
                   <th scope="row">{{ i + 1 }}</th>
                   <td>{{song.title}}</td>
                   <td>{{song.genre}}</td>
@@ -81,5 +85,9 @@
               </tr>
           </tbody>
       </table>
+      <div class="d-flex justify-content-center">
+        <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+        </pagination-controls>
+      </div>
   </div>
 </div>

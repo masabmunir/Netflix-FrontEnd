@@ -18,6 +18,14 @@ export class VideosComponent implements OnInit {
   vidId: any = 0
   displayStyle = "none";
   videos:any=[]
+  searchText:any
+    // For Pagination
+    POSTS: Array<any> = []
+    page: number = 1;
+    count: number = 0;
+    tableSize: number = 2;
+    tableSizes: any = [3, 6, 9, 12];
+    // End's Here
 
   constructor(public videoService: UserVideoService) { }
 
@@ -112,6 +120,24 @@ updateView(vid: any) {
     this.addVideo.controls['genre'].setValue(vid.genre),
     this.addVideo.controls['videoUrl'].setValue(vid.poster),
     this.openPopup()
+}
+onTableDataChange(event: any) {
+  let startIndex = (event - 1) * this.tableSize
+  let endingIndex = event * this.tableSize
+  let myArr = this.POSTS.filter((item: any, index: any) => { if (index >= startIndex && index < endingIndex) return item })
+  this.vidlist = myArr.sort(function (a: any, b: any) {
+    var textA = a.moviesTitle.toUpperCase();
+    var textB = b.moviesTitle.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+  });
+
+  this.page = event;
+  // this.userData();
+}
+onTableSizeChange(event: any): void {
+  this.tableSize = event.target.value;
+  this.page = 1;
+  // this.userData();
 }
 
 }

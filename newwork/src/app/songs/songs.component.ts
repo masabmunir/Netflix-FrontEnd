@@ -17,6 +17,14 @@ export class SongsComponent implements OnInit {
   vidId: any = 0
   displayStyle = "none";
   songs:any=[]
+  searchText:any
+  // For Pagination
+  POSTS: Array<any> = []
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 2;
+  tableSizes: any = [3, 6, 9, 12];
+  // End's Here
   constructor(public SongService: songService) { }
 
   ngOnInit() {
@@ -112,5 +120,22 @@ updateView(vid: any) {
     this.addSongs.controls['singerName'].setValue(vid.singerName),
     this.openPopup()
 }
+onTableDataChange(event: any) {
+  let startIndex = (event - 1) * this.tableSize
+  let endingIndex = event * this.tableSize
+  let myArr = this.POSTS.filter((item: any, index: any) => { if (index >= startIndex && index < endingIndex) return item })
+  this.vidlist = myArr.sort(function (a: any, b: any) {
+    var textA = a.moviesTitle.toUpperCase();
+    var textB = b.moviesTitle.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+  });
 
+  this.page = event;
+  // this.userData();
+}
+onTableSizeChange(event: any): void {
+  this.tableSize = event.target.value;
+  this.page = 1;
+  // this.userData();
+}
 }

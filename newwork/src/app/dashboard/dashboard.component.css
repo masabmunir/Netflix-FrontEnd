@@ -1,106 +1,106 @@
 .product{
-    padding: 20px 0;
+  padding: 20px 0;
 }
 
 .slider-wrap{
-    position: relative;
-   
+  position: relative;
+
 }
 .slider-main{
-    display: flex;
-    overflow: hidden;
-    height: 200px;
+  display: flex;
+  overflow: hidden;
+  height: 200px;
 }
- .item{
-    display: inline-block;
-    width: 620px;
-    height: 150px;
-    position: relative;
-    margin: 0 12px;
-} 
+.item{
+  display: inline-block;
+  width: 620px;
+  height: 150px;
+  position: relative;
+  margin: 0 12px;
+}
 .text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    font-size: 24px;
-    font-weight: bold;
-   
-} 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 24px;
+  font-weight: bold;
+
+}
 
 .prev{
-    position: absolute;
-    left: 22px;
-    top:27%;
-    transform: translate(-50%,-50%);
-    margin-top: 3rem
+  position: absolute;
+  left: 22px;
+  top:27%;
+  transform: translate(-50%,-50%);
+  margin-top: 3rem
 }
 
 .next{
-    position: absolute;
-    right: -5px;
-    top: 38%;
+  position: absolute;
+  right: -5px;
+  top: 38%;
 }
 
 
 .item:hover {
-    -ms-transform: scale(1.5); /* IE 9 */
-    -webkit-transform: scale(1.5); /* Safari 3-8 */
-    transform: scale(1.5); 
-  }
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
 
-  .img{
-    height: 60px;
-  }
+.img{
+  height: 60px;
+}
 
-  img{
-    width: 60px;
-  }
+img{
+  width: 60px;
+}
 
-  
-  .table-responsive{
-    padding: 1rem;
-  }
 
-  .same-btn{
-    background: #0d8ea1;
-    margin-left: 1rem;
-    color:white
-  }
+.table-responsive{
+  padding: 1rem;
+}
 
-  .same-btn:hover{
-    background-color: #0d8ea1;
-    color:white
+.same-btn{
+  background: #0d8ea1;
+  margin-left: 1rem;
+  color:white
+}
+
+.same-btn:hover{
+  background-color: #0d8ea1;
+  color:white
 
 }
 
 .form-outline{
-  display: flex;
-  justify-content: space-between;
+display: flex;
+justify-content: space-between;
 }
 
 .text-center{
-  margin-top: 2rem;
-  margin-right: 4rem;
-  font-size: 35px;
+margin-top: 2rem;
+margin-right: 4rem;
+font-size: 35px;
 }
 
 .form-control{
-  flex-basis: 20%;
+flex-basis: 20%;
 }
 
 .table-bordered{
-  text-align: center;
+text-align: center;
 }
 
 .edit:hover{
-  background-color: #0d8ea1;
+background-color: #0d8ea1;
 }
 
 .danger:hover{
-  background-color: #f54744;
+background-color: #f54744;
 }
 
 .btn-group{
-  margin-top: 1rem;
+margin-top: 1rem;
 }

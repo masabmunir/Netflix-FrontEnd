@@ -36,6 +36,7 @@
                   <button type="button" class="btn btn-danger" (click)="closeModal()">
                       Close
                   </button>
+                  <input type="search" id="form1" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
               </div>
           </div>
       </div>
@@ -62,7 +63,11 @@
               </tr>
           </thead>
           <tbody>
-              <tr *ngFor="let vid of videos; index as i">
+              <tr *ngFor="let vid of videos| paginate:{
+                itemsPerPage: tableSize,
+                currentPage: page,
+                totalItems: count
+              }|filter:searchText; index as i">
                   <th scope="row">{{ i + 1 }}</th>
                   <td>{{vid.title}}</td>
                   <td>{{vid.genre}}</td>
@@ -74,5 +79,9 @@
               </tr>
           </tbody>
       </table>
+      <div class="d-flex justify-content-center">
+        <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+        </pagination-controls>
+      </div>
   </div>
 </div>
