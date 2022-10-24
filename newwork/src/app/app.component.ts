@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { map } from 'rxjs';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthserviceService } from './sharedservice/authservice.service';
 
@@ -8,11 +9,17 @@ import { AuthserviceService } from './sharedservice/authservice.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+url:any='';
+  constructor(private authService: AuthserviceService, private router: Router, private route: ActivatedRoute) {
+    
+  }
 
-  constructor(private authService: AuthserviceService, private router: Router) {
-    if (this.authService.isAuthenticated()) {
-      this.router.navigate(['list'])
+  ngOnInit(): void {
+    this.url = this.router.url.split('/');
+    this.url = this.url[this.url.length]
+    if (this.authService.isAuthenticated() && this.url) {
+      this.router.navigate([this.url])
     }
   }
 }
