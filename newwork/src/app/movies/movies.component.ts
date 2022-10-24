@@ -108,12 +108,15 @@ export class MoviesComponent implements OnInit {
   // Delete Movies 
 
   dellUser(item: any) {
-    if(confirm("Are you sure "))
+    if(confirm("Are you sure ")){
     this.collection.splice(item - 1, 1)
     this.userMovies.delUser(item).subscribe(res => {
       console.log(res)
       this.getData();
     })
+  }else{
+    console.log('Data will not be deleted');
+  }
   }
 
   // Update View 

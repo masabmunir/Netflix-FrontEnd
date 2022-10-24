@@ -13,7 +13,8 @@ ul,li{
 .menu{
     display: flex;
     width: max-content; 
-    color: white
+    color: white;
+    margin-top: 12px;
 }
 
 button{
@@ -85,4 +86,9 @@ button{
 img {
     height: 50px;
     width: 94%;
+ }
+
+ .logo-image{
+    display: flex;
+    justify-items: center;
  }

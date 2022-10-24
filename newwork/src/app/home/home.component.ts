@@ -99,12 +99,15 @@ export class HomeComponent implements OnInit {
 
 
   delUser(item: any) {
-    if(confirm("Are you sure "))
+    if(confirm("Are you sure ")){
     this.collection.splice(item - 1, 1);
     this.usernames.deleteUser(item).subscribe((res: any) => {
       console.log(res);
       this.userData();
     });
+  }else{
+    console.log("data will not be deleted")
+  }
   }
 
   // For Model open and Close

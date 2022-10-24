@@ -18,8 +18,6 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatMenuModule} from '@angular/material/menu';
-import { UpdateComponent } from './update/update.component';
-import { AdduserComponent } from './adduser/adduser.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NextDirective } from './directive/next.directive';
 import { PrevDirective } from './directive/prev.directive';
@@ -29,6 +27,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -40,8 +39,6 @@ import {MatDialogModule} from '@angular/material/dialog';
     SidenavComponent,
     HomeComponent,
     DashboardComponent,
-    UpdateComponent,
-    AdduserComponent,
     NextDirective,
     PrevDirective,
     EditImageComponent,
@@ -60,6 +57,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatIconModule,
     MatToolbarModule,
     MatMenuModule,
+    MatExpansionModule,
     Ng2SearchPipeModule,
     NgxPaginationModule,
     MatDialogModule,

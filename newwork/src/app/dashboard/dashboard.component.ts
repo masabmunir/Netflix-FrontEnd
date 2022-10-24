@@ -56,12 +56,15 @@ export class DashboardComponent implements OnInit {
   }
 
   dellUser(item: any) {
-    if(confirm("Are you sure "))
+    if(confirm("Are you sure ")){
     this.collection.splice(item - 1, 1);
     this.userImages.delUser(item).subscribe((res) => {
       console.log(res);
       this.userData();
     });
+  }else{
+    console.log('data will not be deleted')
+  }
   }
 
   // Modal Code Start
