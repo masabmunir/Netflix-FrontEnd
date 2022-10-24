@@ -7,8 +7,6 @@ import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { UpdateComponent } from './update/update.component';
-import { AdduserComponent } from './adduser/adduser.component';
 import { AuthGuard } from './auth/auth.guard';
 import { EditImageComponent } from './edit-image/edit-image.component';
 import { MoviesComponent } from './movies/movies.component';
@@ -22,8 +20,6 @@ const routes: Routes = [
       path: 'home', component: HomeComponent
     }, {
       path: 'dashboard', component: DashboardComponent},
-    { path: 'update/:id', component: UpdateComponent },
-    { path: 'adduser', component: AdduserComponent },
     {path:'movies',component:MoviesComponent},
 
     {path:'editimage/:id',component:EditImageComponent}]

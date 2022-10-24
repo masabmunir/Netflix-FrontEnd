@@ -18,6 +18,15 @@ export class MoviesComponent implements OnInit {
   collection: any = []
   movId: any = 0
   searchText:any
+
+   // For Pagination
+   POSTS: Array<any> = []
+   page: number = 1;
+   count: number = 0;
+   tableSize: number = 2;
+   tableSizes: any = [3, 6, 9, 12];
+   // End's Here
+
   constructor(private myFormBuilder: FormBuilder,
     private userMovies: UserMoviesService) { }
 
@@ -37,9 +46,12 @@ export class MoviesComponent implements OnInit {
 
   // For Getting Data of Movies
   getData() {
-    this.userMovies.getMovies().subscribe(res => {
+    this.userMovies.getMovies().subscribe((res:any) => {
       console.log("Movies Data is" + res)
       this.movlist = res;
+      this.POSTS=res;
+      this.count = res.length;
+      this.onTableDataChange(this.page)
     }, (err) => {
       console.log("Something went wrong while getting data" + err)
     })
@@ -96,11 +108,15 @@ export class MoviesComponent implements OnInit {
   // Delete Movies 
 
   dellUser(item: any) {
+    if(confirm("Are you sure ")){
     this.collection.splice(item - 1, 1)
     this.userMovies.delUser(item).subscribe(res => {
       console.log(res)
       this.getData();
     })
+  }else{
+    console.log('Data will not be deleted');
+  }
   }
 
   // Update View 
@@ -130,6 +146,26 @@ export class MoviesComponent implements OnInit {
     }, (err) => {
       console.log("Not Working" + err)
     })
+  
+  }
+
+  onTableDataChange(event: any) {
+    let startIndex = (event - 1) * this.tableSize
+    let endingIndex = event * this.tableSize
+    let myArr = this.POSTS.filter((item: any, index: any) => { if (index >= startIndex && index < endingIndex) return item })
+    this.movlist = myArr.sort(function (a: any, b: any) {
+      var textA = a.moviesTitle.toUpperCase();
+      var textB = b.moviesTitle.toUpperCase();
+      return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+    });
+
+    this.page = event;
+    // this.userData();
+  }
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    // this.userData();
   }
 
 }

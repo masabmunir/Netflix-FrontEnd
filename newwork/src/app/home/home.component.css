@@ -11,14 +11,15 @@
     margin-top: 1rem
 }
 
-.same-btn {
+.add-user {
     background-color: #0d8ea1;
     margin-left: 1rem;
+    color: white;
 }
 
-.same-btn:hover {
+.add-user:hover{
     background-color: #0d8ea1;
-
+    color:white;
 }
 
 .form-outline {
@@ -26,9 +27,7 @@
     justify-content: space-between;
 }
 
-.table {
-    margin-top: 1rem;
-}
+
 
 .text-center {
     margin: 0;
@@ -42,8 +41,27 @@
 
 .form-control {
     flex-basis: 20%;
+    height: 40%;
+    margin-right: 1rem
 }
 
 .table-bordered{
     text-align: center;
+}
+
+/* .edit{
+    color:white
+} */
+
+.edit-btn:hover{
+    background-color: #0d8ea1;
+}
+
+.danger:hover{
+    background-color: #f54744;
+
+}
+
+.btn-group{
+    margin-top: 1rem;
 }

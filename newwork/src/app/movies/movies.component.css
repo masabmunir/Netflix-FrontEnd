@@ -10,10 +10,12 @@
 .same-btn{
 background: #0d8ea1;
 margin-left: 1rem;
+color: white;
 }
 
 .same-btn:hover{
-    background-color: #0d8ea1;   
+    background-color: #0d8ea1; 
+    color: white;  
 }
 
 .form-outline{
@@ -33,4 +35,15 @@ margin-left: 1rem;
 
 .table-bordered{
     text-align: center;
+}
+
+.edit:hover{
+    background: #0d8ea1;
+}
+.danger:hover{  
+    background-color: #f54744;
+}
+
+.btn-group{
+    margin-top: 1rem;
 }

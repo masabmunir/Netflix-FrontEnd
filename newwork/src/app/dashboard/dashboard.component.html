@@ -12,7 +12,8 @@
 
                     <div class="m-2">
                         <label for="name">Image Title:</label><br>
-                        <input type="text" id="name" placeholder="Title" value="" class="form-control w-100" formControlName="imageTitle" required name="imageTitle">
+                        <input type="text" id="name" placeholder="Title" value="" class="form-control w-100"
+                            formControlName="imageTitle" required name="imageTitle">
                     </div>
                     <div class="m-2">
                         <label for="desc">Image Description:</label><br>
@@ -21,12 +22,12 @@
                     </div>
 
                     <div class="m-2">
-                        <input type='file' (change)="readURL($event);" formControlName="imageURl"/>
+                        <input type='file' (change)="readURL($event);" formControlName="imageURl" />
                         <img class="img" id="blah" [src]="imageSrc" />
                     </div>
 
                     <div class="m-2">
-                        <button class="btn btn-success" (click)="closePopup()" >Submit</button>
+                        <button class="btn btn-success" (click)="closePopup()">Submit</button>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -48,14 +49,14 @@
         <br>
 
         <div class="form-outline">
-            <button  class="btn same-btn" (click)="openPopup()">AddSlider</button>
+            <button class="btn same-btn" (click)="openPopup()">AddSlider</button>
             <input type="search" id="form1" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
-          </div>
+        </div>
         <br>
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">id</th>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
                     <th scope="col">URL</th>
@@ -64,17 +65,26 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let img of imagist ; index as i">
+                <tr *ngFor="let img of imagist | paginate:{
+                    itemsPerPage: tableSize,
+                    currentPage: page,
+                    totalItems: count
+                  }|filter:searchText;index as i">
+
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{img.imageTitle}}</td>
                     <td>{{img.imageDesc}}</td>
                     <td><img src="{{img.imageURl}}" alt=""></td>
-                    <td>
-                        <a class="btn same-btn btn-sm" (click)="updateView(img)"><i></i>Edit</a> &nbsp;
-                        <a class="btn btn-danger btn-sm" (click)="dellUser(img._id)"><i></i>Delete</a>
+                    <td class="btn-group" role="group">
+                        <a class="btn  btn-sm edit" (click)="updateView(img)"><i></i>Edit</a> &nbsp;
+                        <a class="btn danger btn-sm" (click)="dellUser(img._id)"><i></i>Delete</a>
                     </td>
                 </tr>
             </tbody>
         </table>
+        <div class="d-flex justify-content-center">
+            <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+            </pagination-controls>
+        </div>
     </div>
 </div>

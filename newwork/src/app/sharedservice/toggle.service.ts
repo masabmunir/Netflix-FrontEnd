@@ -13,6 +13,7 @@ export class ToggleService {
   isSidebarShowEvent = new Subject<boolean>();
   isSidebarShow = true;
 
+  display = new Subject<boolean>();
 
   toggleSidebar() {
     this.isSidebarShow = !this.isSidebarShow
@@ -22,5 +23,6 @@ export class ToggleService {
       this.isSidebarShowEvent.next(true)
     }
   }
+
 
 }
