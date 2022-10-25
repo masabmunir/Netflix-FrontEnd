@@ -1,7 +1,3 @@
-
-
-<button style="margin: 20px; padding: 8px" type="button" class="btn same-btn" (click)="openPopup()">Add
-  videos</button>
 <form [formGroup]="addSongs" (ngSubmit)="isUpdate ? updateData() :saveData()">
   <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
       <div class="modal-dialog" role="document">
@@ -51,18 +47,24 @@
 
 <!-- Modal end here -->
 <div class="card main-card mb-3">
-  <div class="card-header">
-      <h3 class="text-center"> Song Content </h3>
-  </div>
+ 
+
   <div class="table-responsive">
 
+    <h3 class="text-center"> Song Content </h3>
+    <br>
+
+    <div class="form-outline">
+        <button class="btn Add-btn" (click)="openPopup()">Add Songs</button>
+        <input type="search" id="form1" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
+    </div>
       <br>
-      <table class="table" id="employeedataTable">
+      <table class="table table-bordered" id="employeedataTable">
           <thead>
               <tr>
                   <th scope="col">#</th>
                   <th scope="col">Title</th>
-                  <th scope="col">Genre</th>
+                  <th scope="col">Description</th>
                   <th scope="col">Singer Name</th>
                   <th scope="col">Action</th>
               </tr>
@@ -78,9 +80,9 @@
                   <td>{{song.genre}}</td>
                   <td>{{song.singerName}}</td>
 
-                  <td>
-                    <a class="btn same-btn btn-sm" (click)="updateView(song)"><i></i>Edit</a> &nbsp;
-                    <a class="btn btn-danger btn-sm" (click)="dellUser(song._id)"><i></i>Delete</a>
+                  <td class="btn-group m-2">
+                    <a class="btn  btn-sm group" (click)="updateView(song)"><i></i>Edit</a> &nbsp;
+                    <a class="btn btn-sm group" (click)="dellUser(song._id)"><i></i>Delete</a>
                 </td>
               </tr>
           </tbody>

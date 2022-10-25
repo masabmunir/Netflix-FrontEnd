@@ -1,6 +1,5 @@
 export interface videos{
-  title:string,
-  genre:string,
-  poster:string
-
+  videoTitle:string,
+  videogenre:string,
+  videoURL:string
 }

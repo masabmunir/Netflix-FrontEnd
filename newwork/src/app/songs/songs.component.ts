@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { songService } from '../sharedservice/songs.service';
 @Component({
   selector: 'app-songs',
@@ -18,6 +18,7 @@ export class SongsComponent implements OnInit {
   displayStyle = "none";
   songs:any=[]
   searchText:any
+
   // For Pagination
   POSTS: Array<any> = []
   page: number = 1;
@@ -25,14 +26,24 @@ export class SongsComponent implements OnInit {
   tableSize: number = 2;
   tableSizes: any = [3, 6, 9, 12];
   // End's Here
-  constructor(public SongService: songService) { }
+
+  constructor(public SongService: songService,private myFormbuilder:FormBuilder) { }
 
   ngOnInit() {
+    this.formControl();
     this.SongService.getSongs().subscribe(res => {
       console.log("Song Data is" + res)
       this.songs = res;
     }, (err) => {
       console.log("Something went wrong while getting data" + err)
+    })
+  }
+
+  formControl(){
+    this.addSongs= this.myFormbuilder.group({
+      title: ['',Validators.required],
+      genre: ['',Validators.required],
+      singerName: ['',Validators.required]
     })
   }
   getData(){

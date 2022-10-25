@@ -55,11 +55,12 @@
 
 .edit-btn:hover{
   background-color: #0d8ea1;
+  color:white
 }
 
 .danger:hover{
-  background-color: #f54744;
-
+  background-color: #0d8ea1;
+  color:white
 }
 
 /* .btn-group{

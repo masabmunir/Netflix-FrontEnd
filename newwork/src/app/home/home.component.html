@@ -81,7 +81,8 @@
               currentPage: page,
               totalItems: count
             }|filter:searchText;index as i">
-          <th scope="row">{{ emp._id }}</th>
+            <!-- emp._id -->
+          <th scope="row">{{ i + 1 }}</th>
           <td>{{emp.name}}</td>
           <td>{{emp.email}}</td>
           <td>{{emp.role}}</td>

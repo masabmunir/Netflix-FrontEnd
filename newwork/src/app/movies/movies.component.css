@@ -39,11 +39,18 @@ color: white;
 
 .edit:hover{
   background: #0d8ea1;
+  color: white;
 }
 .danger:hover{
-  background-color: #f54744;
+  background: #0d8ea1;
+  color: white;
 }
 
 .btn-group{
   margin-top: 1rem;
+}
+
+.group{
+  border: 1px solid black !important;
+
 }

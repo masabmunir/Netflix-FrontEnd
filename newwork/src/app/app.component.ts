@@ -10,10 +10,9 @@ import { AuthserviceService } from './sharedservice/authservice.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-url:any='';
-  constructor(private authService: AuthserviceService, private router: Router, private route: ActivatedRoute) {
-    
-  }
+  url: any = '';
+  
+  constructor(private authService: AuthserviceService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.url = this.router.url.split('/');

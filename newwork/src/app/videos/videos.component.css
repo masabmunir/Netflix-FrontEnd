@@ -7,11 +7,45 @@
   padding: 1rem;
 }
 
-.same-btn{
-background: #0d8ea1;
+.add-btn{
+  background: #0d8ea1;
+  color: white;
 }
 
-.same-btn:hover{
-  background-color: #0d8ea1;
+.add-btn:hover{
+  background: #0d8ea1;
+  color: white;
+}
 
- }
+ .form-outline{
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-center{
+  margin-top: 2rem;
+  margin-right: 4rem;
+  font-size: 35px;
+}
+
+.form-control{
+  flex-basis: 20%;
+}
+
+.table-bordered{
+  text-align: center;
+}
+
+
+.btn-group{
+  margin-top: 1rem;
+}
+
+.group{
+  border: 1px solid black !important;
+}
+
+.group:hover{
+  background: #0d8ea1;
+  color: white;
+}

@@ -75,9 +75,10 @@
                   <td>{{img.imageTitle}}</td>
                   <td>{{img.imageDesc}}</td>
                   <td><img src="{{img.imageURl}}" alt=""></td>
-                  <td class="btn-group" role="group">
-                      <a class="btn  btn-sm edit" (click)="updateView(img)"><i></i>Edit</a> &nbsp;
-                      <a class="btn danger btn-sm" (click)="dellUser(img._id)"><i></i>Delete</a>
+
+                  <td class="btn-group m-2" role="group">
+                      <a class="btn  btn-sm edit group" (click)="updateView(img)"><i></i>Edit</a>
+                      <a class="btn danger btn-sm group" (click)="dellUser(img._id)"><i></i>Delete</a>
                   </td>
               </tr>
           </tbody>

@@ -1,101 +1,102 @@
 <form [formGroup]="addMovie" (ngSubmit)="isUpdate ? updateData() :saveData()">
-  <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
-      <div class="modal-dialog" role="document">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h4 class="modal-title">Add Detail</h4>
-              </div>
-              <div class="modal-body">
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Detail</h4>
+                </div>
+                <div class="modal-body">
 
-                  <div class="m-2">
-                      <label for="desc">Movie Title:</label><br>
-                      <input id="desc" name="desc" value="" rows="2" placeholder="moviesTitle"
-                          class="form-control w-100" required name="moviesTitle" formControlName="moviesTitle">
-                  </div>
+                    <div class="m-2">
+                        <label for="desc">Movie Title:</label><br>
+                        <input id="desc" name="desc" value="" rows="2" placeholder="moviesTitle"
+                            class="form-control w-100" required name="moviesTitle" formControlName="moviesTitle">
+                    </div>
 
-                  <div class="m-2">
-                      <label for="desc">Movie Detail:</label><br>
-                      <input id="desc" name="desc" value="" rows="2" placeholder="moviesDetail"
-                          class="form-control w-100" required name="moviesDetail" formControlName="moviesDetail">
-                  </div>
+                    <div class="m-2">
+                        <label for="desc">Movie Detail:</label><br>
+                        <input id="desc" name="desc" value="" rows="2" placeholder="moviesDetail"
+                            class="form-control w-100" required name="moviesDetail" formControlName="moviesDetail">
+                    </div>
 
-                  <div class="m-2 dropdown">
-                      <label for="desc">Movie Categories:</label><br>
+                    <div class="m-2 dropdown">
+                        <label for="desc">Movie Categories:</label><br>
 
 
-                      <input id="desc" name="desc" value="" rows="2" placeholder="moviesCategories"
-                          class="form-control w-100" required name="moviesCategories"
-                          formControlName="moviesCategories">
+                        <input id="desc" name="desc" value="" rows="2" placeholder="moviesCategories"
+                            class="form-control w-100" required name="moviesCategories"
+                            formControlName="moviesCategories">
 
-                  </div>
+                    </div>
 
-                  <div class="m-2">
-                      <video [src]="url" *ngIf="format==='video' && url" height="200" width="200" controls></video>
-                      <br />
-                      <input type='file' (change)="onSelectFile($event)" />
-                  </div>
+                    <div class="m-2">
+                        <video [src]="url" *ngIf="format==='video' && url" height="200" width="200" controls></video>
+                        <br />
+                        <input type='file' (change)="onSelectFile($event)" />
+                    </div>
 
-                  <div class="m-2">
-                      <button class="btn btn-success" (click)="closePopup()">Submit</button>
-                  </div>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" (click)="closeModal()">
-                      Close
-                  </button>
-              </div>
-          </div>
-      </div>
-  </div>
+                    <div class="m-2">
+                        <button class="btn btn-success" (click)="closePopup()">Submit</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" (click)="closeModal()">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </form>
 
 
 <!-- Modal end here -->
 <div class="card main-card mb-3">
 
-  <div class="table-responsive">
+    <div class="table-responsive">
 
-      <h3 class="text-center"> Movies Content </h3>
-      <br>
+        <h3 class="text-center"> Movies Content </h3>
+        <br>
 
-      <div class="form-outline">
-          <button class="btn same-btn" (click)="openPopup()">Add Movies</button>
-          <input type="search" id="form1" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
-      </div>
-      <br>
-      <table class="table table-bordered" id="employeedataTable">
-          <thead>
-              <tr>
-                  <th scope="col">id</th>
-                  <th scope="col">Title</th>
-                  <th scope="col">Detail</th>
-                  <th scope="col">Categories</th>
-                  <th scope="col">Poster</th>
-                  <th scope="col">Action</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr *ngFor="let mov of movlist | paginate:{
-            itemsPerPage: tableSize,
-            currentPage: page,
-            totalItems: count
-          }|filter:searchText; index as i">
-                  <th scope="row">{{ i + 1 }}</th>
-                  <td>{{mov.moviesTitle}}</td>
-                  <td>{{mov.moviesDetail}}</td>
-                  <td>{{mov.moviesCategories}}</td>
-                  <td><video class="video" src="{{mov.moviesURl}}" alt=""></video></td>
-
-                  <td class="btn-group" role="group">
-                      <a class="btn  btn-sm edit" (click)="updateView(mov)"><i></i>Edit</a> &nbsp;
-                      <a class="btn danger btn-sm" (click)="dellUser(mov._id)"><i></i>Delete</a>
-                  </td>
-              </tr>
-          </tbody>
-      </table>
-      <div class="d-flex justify-content-center">
-          <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
-          </pagination-controls>
+        <div class="form-outline">
+            <button class="btn same-btn" (click)="openPopup()">Add Movies</button>
+            <input type="search" id="form1" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
         </div>
-  </div>
+        <br>
+        <table class="table table-bordered" id="employeedataTable">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Detail</th>
+                    <th scope="col">Categories</th>
+                    <th scope="col">Poster</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let mov of movlist | paginate:{
+                      itemsPerPage: tableSize,
+                      currentPage: page,
+                      totalItems: count
+                }|filter:searchText; index as i">
+
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{mov.moviesTitle}}</td>
+                    <td>{{mov.moviesDetail}}</td>
+                    <td>{{mov.moviesCategories}}</td>
+                    <td><video class="video" src="{{mov.moviesURl}}" alt=""></video></td>
+
+                    <td class="btn-group m-2" role="group">
+                        <a class="btn  btn-sm edit group" (click)="updateView(mov)"><i></i>Edit</a>
+                        <a class="btn danger btn-sm group" (click)="dellUser(mov._id)"><i></i>Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center">
+            <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+            </pagination-controls>
+        </div>
+    </div>
 </div>
