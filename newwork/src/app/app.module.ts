@@ -28,6 +28,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { NgxsModule } from '@ngxs/store';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import {UsersState} from "../Store/State/userDetail.state";
+
 
 @NgModule({
   declarations: [
@@ -43,6 +47,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     PrevDirective,
     EditImageComponent,
     MoviesComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -63,7 +68,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatDialogModule,
     MDBBootstrapModule.forRoot(),
     ToastrModule.forRoot(),
-     
+    NgxsModule.forRoot([UsersState]),
+    NgxsLoggerPluginModule.forRoot()
+
  ],
   providers: [],
   bootstrap: [AppComponent]

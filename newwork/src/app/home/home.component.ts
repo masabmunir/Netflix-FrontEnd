@@ -3,7 +3,11 @@ import { UserdataService } from '../sharedservice/userdata.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-
+import {Store,Select} from '@ngxs/store'
+import {AddUsers, DeleteUsers, EditUsers, GetUsers} from "../../Store/Action/userDetail.action";
+import {Observable} from "rxjs";
+import {UsersState} from "../../Store/State/userDetail.state";
+import {User} from "../../../userModule/user.model";
 
 @Component({
   selector: 'app-home',
@@ -26,13 +30,18 @@ export class HomeComponent implements OnInit {
   tableSizes: any = [3, 6, 9, 12];
   // End's Here
 
+  @Select(UsersState.getUserlist) users$: Observable<User[]>;
+  @Select(UsersState.isUserLoaded) isUserLoaded$: Observable<boolean>;
+
+
   constructor(
     private usernames: UserdataService,
     private myFormBuilder: FormBuilder,
     private routerURL: Router,
     private router: ActivatedRoute,
-    private toastr: ToastrService) {
-    this.userData();
+    private toastr: ToastrService,
+    private store:Store) {
+    // this.userData();
   }
 
   formControl() {
@@ -48,34 +57,41 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.formControl()
-    this.userData();
+    // this.userData();
+    this.isUserLoaded$.subscribe(res=> {
+      if (!res) {
+        this.store.dispatch(new GetUsers())
+      }
+    })
   }
 
 
 
-  userData() {
-    this.usernames.getData().subscribe((res: any) => {
-      this.count = res.length
-      this.POSTS = res;
-      this.onTableDataChange(this.page)
-    }, (err) => {
-      console.log("error is " + err)
-    }
-    )
-  }
+  // userData() {
+  //   this.store.dispatch(new GetUsers())
+  //   // this.usernames.getData().subscribe((res: any) => {
+  //   //   this.count = res.length
+  //   //   this.POSTS = res;
+  //   //   this.onTableDataChange(this.page)
+  //   // }, (err) => {
+  //   //   console.log("error is " + err)
+  //   // }
+  //   // )
+  // }
 
   saveData() {
-    console.log(this.addUser.value);
-    this.usernames.addUserlist(this.addUser.value).subscribe(
-      (res) => {
-        this.userData();
-        this.routerURL.navigateByUrl('/list/home');
-        console.log("res", res);
-      },
-      (err) => {
-        console.log(err);
-      }
-    )
+    this.store.dispatch(new AddUsers(this.addUser.value))
+    // console.log(this.addUser.value);
+    // this.usernames.addUserlist(this.addUser.value).subscribe(
+    //   (res) => {
+    //     // this.userData();
+    //     this.routerURL.navigateByUrl('/list/home');
+    //     console.log("res", res);
+    //   },
+    //   (err) => {
+    //     console.log(err);
+    //   }
+    // )
   }
 
   onTableDataChange(event: any) {
@@ -99,15 +115,16 @@ export class HomeComponent implements OnInit {
 
 
   delUser(item: any) {
-    if(confirm("Are you sure ")){
-    this.collection.splice(item - 1, 1);
-    this.usernames.deleteUser(item).subscribe((res: any) => {
-      console.log(res);
-      this.userData();
-    });
-  }else{
-    console.log("data will not be deleted")
-  }
+    this.store.dispatch(new DeleteUsers(item));
+  //   if(confirm("Are you sure ")){
+  //   this.collection.splice(item - 1, 1);
+  //   this.usernames.deleteUser(item).subscribe((res: any) => {
+  //     console.log(res);
+  //     // this.userData();
+  //   });
+  // }else{
+  //   console.log("data will not be deleted")
+  // }
   }
 
   // For Model open and Close
@@ -134,21 +151,22 @@ export class HomeComponent implements OnInit {
   }
 
   updateData() {
+    this.store.dispatch(new EditUsers(this.empID, this.addUser.value))
     this.isUpdate = false;
-    this.usernames.updateUser(this.empID, {
-      name: this.addUser.controls['name'].value,
-      email: this.addUser.controls['email'].value,
-      role: this.addUser.controls['role'].value,
-      contact: this.addUser.controls['contact'].value,
-      password: ''
-    }).subscribe((res)=>{
-      console.log(res);
-      // this.saveData();
-      this.userData();
-      
-    },(err)=>{
-      console.log("Not Working" + err)
-    })
+    // this.usernames.updateUser(this.empID, {
+    //   name: this.addUser.controls['name'].value,
+    //   email: this.addUser.controls['email'].value,
+    //   role: this.addUser.controls['role'].value,
+    //   contact: this.addUser.controls['contact'].value,
+    //   password: ''
+    // }).subscribe((res)=>{
+    //   console.log(res);
+    //   // this.saveData();
+    //   // this.userData();
+    //
+    // },(err)=>{
+    //   console.log("Not Working" + err)
+    // })
   }
 
 

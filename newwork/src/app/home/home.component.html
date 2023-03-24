@@ -76,11 +76,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let emp of empData | paginate:{
-              itemsPerPage: tableSize,
-              currentPage: page,
-              totalItems: count
-            }|filter:searchText;index as i">
+        <tr *ngFor="let emp of users$ | async ;index as i ">
           <th scope="row">{{ emp._id }}</th>
           <td>{{emp.name}}</td>
           <td>{{emp.email}}</td>
