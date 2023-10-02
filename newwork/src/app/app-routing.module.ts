@@ -21,13 +21,11 @@ const routes: Routes = [
     }, {
       path: 'dashboard', component: DashboardComponent},
     {path:'movies',component:MoviesComponent},
-    
+
     {path:'editimage/:id',component:EditImageComponent}]
   },
   { path: 'header', component: HeaderComponent },
-  { path: 'sidenav', component: SidenavComponent }
-
-
+  { path: 'sidenav', component: SidenavComponent },
 
 ];
 

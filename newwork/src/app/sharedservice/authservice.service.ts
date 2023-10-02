@@ -12,15 +12,15 @@ export class AuthserviceService {
 
   public isAuthenticated() {
 
-   return localStorage.getItem('token') != null;
-   
+   return localStorage.getItem('token') != null;  // If it is not null
+
   }
 
   logOut(){
     localStorage.removeItem('token');
     localStorage.removeItem('id');
     this.router.navigateByUrl('login')
-  
+
   }
 }
 

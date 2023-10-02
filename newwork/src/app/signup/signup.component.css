@@ -1,5 +1,5 @@
 .main{
-    background-image: url('../../assets/images.jpeg');
+    background-image: url('../../assets/THT2022_inner_register_bkg_page_01.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     margin: 0px;
@@ -15,7 +15,7 @@
     margin: auto;
     margin-left: 9rem;
     width: 60%;
-    padding: 60px;
+    padding: 11rem
 }
 
 .form-control {

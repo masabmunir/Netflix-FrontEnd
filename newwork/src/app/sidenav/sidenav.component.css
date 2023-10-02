@@ -1,8 +1,8 @@
 
 img {
-   height: 65px;
-   width: 100%;
-   margin-left: -1rem
+  height: 157px;
+  width: 100%;
+  margin-left: 0rem;
 }
 
 .mat-icon {
@@ -24,7 +24,7 @@ span{
 .button-hover {
    font-size: 1rem;
    color:white
-} 
+}
 
  .mt-2{
 color: white;
@@ -35,7 +35,7 @@ font-size: 23px;
 
    border: none;
    background-color: #0d8ea1;
-   
+
 }
 
 .clear{

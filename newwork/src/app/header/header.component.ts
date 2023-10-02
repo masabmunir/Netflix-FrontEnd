@@ -11,7 +11,6 @@ import { UserdataService } from '../sharedservice/userdata.service';
 export class HeaderComponent implements OnInit {
   isSidebarShow = true;
   display:boolean = false; // For Logo Image shown in header
-  isImagebarShown = false;
   menu: any;
   userName: any
   constructor(private userdata: UserdataService,
@@ -29,11 +28,11 @@ export class HeaderComponent implements OnInit {
       this.isSidebarShow = data
     })
 
-    // Logo Image 
+    // Logo Image
     this.toggleSidebarService.display.subscribe((res)=>{
       this.display=res;
     })
-    
+
   }
 
   ngOnInit(): void {
@@ -41,7 +40,7 @@ export class HeaderComponent implements OnInit {
 
   toggleSidebar() {
     this.toggleSidebarService.toggleSidebar();
-    this.toggleSidebarService.display.next(false) 
+    this.toggleSidebarService.display.next(false)
   }
 
 

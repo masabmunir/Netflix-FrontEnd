@@ -1,6 +1,6 @@
 <div class="main">
   <div class="container">
-    <h2 class="text-center"><span class="heading">Sign in Form</span></h2>
+    <h2 class="text-center"><span class="heading">Registration Form</span></h2>
     <form [formGroup]="signup" (ngSubmit)="SaveData()">
       <div class="mb-3 mt-3 w-50 same">
         <label for="name">Name:</label>
@@ -35,6 +35,10 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
 
+      <div class="endText">
+        <a class="link" routerLink="/login" class="btn " style="color: rgb(156, 154, 154);    margin-top: -14px;">
+          Already have an account?</a>
+      </div>
     </form>
   </div>
 </div>
