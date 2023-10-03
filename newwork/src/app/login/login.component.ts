@@ -12,8 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
 
   loginForm:FormGroup
-  submitted:false;
-  constructor(private myformbuilder:FormBuilder,
+  constructor(private myFormBuilder:FormBuilder,
               private router:Router,
               private userdata:UserdataService,
               private toastr: ToastrService) { }
@@ -23,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   formControls() {
-    this.loginForm = this.myformbuilder.group({
+    this.loginForm = this.myFormBuilder.group({
       email: ["", Validators.required],
       password: ["", Validators.required]
     });

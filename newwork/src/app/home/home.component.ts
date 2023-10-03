@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import {Store,Select} from '@ngxs/store'
-import {AddUsers, DeleteUsers, EditUsers, GetUsers} from "../../Store/Action/userDetail.action";
+import {EditUsers, GetUsers} from "../../Store/Action/userDetail.action";
 import {Observable} from "rxjs";
 import {UsersState} from "../../Store/State/userDetail.state";
 import {User} from "../../../userModule/user.model";

@@ -93,7 +93,7 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  // For Post Data 
+  // For Post Data
 
   saveData() {
     this.userImages.addData({
@@ -136,18 +136,18 @@ export class DashboardComponent implements OnInit {
   }
 
   onTableDataChange(event: any) {
-   
+
     let startIndex = (event - 1) * this.tableSize
     let endingIndex = event * this.tableSize
     let myArr = this.POSTS.filter((item: any, index: any) => { if (index >= startIndex && index < endingIndex) return item })
     this.imagist = myArr.sort(function (a: any, b: any) {
-      var textA = a.imageTitle.toUpperCase();
-      var textB = b.imageTitle.toUpperCase();
+      let textA = a.imageTitle.toUpperCase();
+      let textB = b.imageTitle.toUpperCase();
       return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
     });
 
     this.page = event;
-   
+
   }
 
   onTableSizeChange(event: any): void {
