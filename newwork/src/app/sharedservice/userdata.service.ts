@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
 })
 export class UserdataService {
 
-  userId: any;
 
   url = environment.BASE_URL;
   getdata = "http://localhost:8000/data/";
