@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   displayStyle = "none";
   isUpdate: boolean = false;
   empID: any = 0;
+  
   // For Pagination
   POSTS: any = []
   page: number = 1;
@@ -162,4 +163,10 @@ export class HomeComponent implements OnInit {
       console.log("Not Working" + err)
     })
   }
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> FrontEnd/admin-1
 }

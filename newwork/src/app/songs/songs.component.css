@@ -1,0 +1,54 @@
+/* .video{
+    height: 80px;
+    width: 80px;
+  } */
+  
+  .table-responsive{
+    padding: 1rem;
+  }
+  
+  .Add-btn{
+    background-color: #0d8ea1;
+    color: white;
+  }
+  
+  .Add-btn:hover{
+    background-color: #0d8ea1;
+    color: white;
+  }
+  
+  
+  .form-outline{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .text-center{
+    margin-top: 2rem;
+    margin-right: 4rem;
+    font-size: 35px;
+  }
+  
+  .form-control{
+    flex-basis: 20%;
+  }
+  
+  .table-bordered{
+    text-align: center;
+  }
+  
+  
+  
+  .btn-group{
+    margin-top: 1rem;
+  }
+  
+  .group{
+    border: 1px solid black !important;
+  
+  }
+
+  .group:hover{
+    background: #0d8ea1;
+    color: white;
+  }

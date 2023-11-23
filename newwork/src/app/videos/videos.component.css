@@ -7,18 +7,17 @@
   padding: 1rem;
 }
 
-.same-btn{
-background: #0d8ea1;
-margin-left: 1rem;
-color: white;
-}
-
-.same-btn:hover{
-  background-color: #0d8ea1;
+.add-btn{
+  background: #0d8ea1;
   color: white;
 }
 
-.form-outline{
+.add-btn:hover{
+  background: #0d8ea1;
+  color: white;
+}
+
+ .form-outline{
   display: flex;
   justify-content: space-between;
 }
@@ -37,14 +36,6 @@ color: white;
   text-align: center;
 }
 
-.edit:hover{
-  background: #0d8ea1;
-  color: white;
-}
-.danger:hover{
-  background: #0d8ea1;
-  color: white;
-}
 
 .btn-group{
   margin-top: 1rem;
@@ -52,5 +43,9 @@ color: white;
 
 .group{
   border: 1px solid black !important;
+}
 
+.group:hover{
+  background: #0d8ea1;
+  color: white;
 }

@@ -1,4 +1,5 @@
 .main{
+<<<<<<< HEAD
     background-image: url('../../assets/THT2022_inner_register_bkg_page_01.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -16,21 +17,79 @@
     margin-left: 9rem;
     width: 60%;
     padding: 11rem
+=======
+  background-image: url('../../assets/SL-121019-25870-23.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 0px;
+  padding: 0px;
+  height: auto;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-left: 9rem;
+  width: 80%;
+  padding: 60px;
+
+}
+
+form{
+
+padding: 50px;
+opacity: 80%;
+background-color: rgb(22, 22, 78);
+position: relative;
+margin-top: 30px;
+padding-top: 40px;
+
+
+>>>>>>> FrontEnd/admin-1
 }
 
 .form-control {
-    width: 300%;
+  width: 100%;
 }
 
 .heading{
-    margin-left: 6rem;
+  margin-left: 6rem;
 }
 
 .text-center{
-    color: white;
+  color: white;
+  text-align: center;
+  margin-left: -100px;
 }
 
 .same{
-    color: white;
+  color: white;
+}
+.btnSubmit{
+background-color: rgb(23, 132, 136);
+width: 320px;
+
+}
+.btnSubmit:hover{
+background-color: rgb(23, 132, 136);
+box-shadow: rgb(59, 165, 168) 1px;
 }
 
+.endText{
+color: white;
+
+}
+.link{
+
+text-decoration: none;
+color: white;
+
+}
+a:link{
+color: white;
+margin-bottom: 5px;
+font-weight: bold;
+}
