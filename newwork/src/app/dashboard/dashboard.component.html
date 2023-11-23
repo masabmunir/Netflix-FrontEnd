@@ -1,6 +1,4 @@
 <!--- Modal Code Start -->
-
-
 <form [formGroup]="addImage" (ngSubmit)="isUpdate ? updateData() : saveData()">
   <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
       <div class="modal-dialog" role="document">
@@ -55,14 +53,15 @@
       <br>
       <table class="table table-bordered">
           <thead>
+            
               <tr>
                   <th scope="col">id</th>
                   <th scope="col">Title</th>
                   <th scope="col">Description</th>
                   <th scope="col">URL</th>
                   <th scope="col">Action</th>
-
               </tr>
+
           </thead>
           <tbody>
               <tr *ngFor="let img of imagist | paginate:{
@@ -71,7 +70,7 @@
                   totalItems: count
                 }|filter:searchText;index as i">
 
-                  <th scope="row">{{ i + 1 }}</th>
+                  <th scope="row">{{ i+1 }}</th>
                   <td>{{img.imageTitle}}</td>
                   <td>{{img.imageDesc}}</td>
                   <td><img src="{{img.imageURl}}" alt=""></td>

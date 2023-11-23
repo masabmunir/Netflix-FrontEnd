@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   displayStyle = "none";
   isUpdate: boolean = false;
   empID: any = 0;
+  
   // For Pagination
   POSTS: any = []
   page: number = 1;

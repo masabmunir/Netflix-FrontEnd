@@ -57,7 +57,7 @@
   <div class="table-responsive">
     <h3 class="text-center mt-5"><span>User Details</span></h3>
     <br>
-    <!-- routerLink="../adduser" -->
+   
     <div class="form-outline">
       <button (click)="openPopup()" class="btn add-user">Add User </button>
       <input type="search" id="form1" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
@@ -81,7 +81,7 @@
               currentPage: page,
               totalItems: count
             }|filter:searchText;index as i">
-            <!-- emp._id -->
+          
           <th scope="row">{{ i + 1 }}</th>
           <td>{{emp.name}}</td>
           <td>{{emp.email}}</td>
@@ -98,10 +98,10 @@
     </table>
     <div class="d-flex justify-content-center">
       <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
-
+        
       </pagination-controls>
     </div>
   </div>
 </div>
 
-<!-- routerLink="../update/{{emp._id}}" -->
+
