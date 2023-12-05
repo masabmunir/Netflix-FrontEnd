@@ -163,10 +163,7 @@ export class HomeComponent implements OnInit {
       console.log("Not Working" + err)
     })
   }
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> FrontEnd/admin-1
 }

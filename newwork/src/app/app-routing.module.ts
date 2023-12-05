@@ -23,21 +23,14 @@ const routes: Routes = [
     }, {
       path: 'dashboard', component: DashboardComponent},
     {path:'movies',component:MoviesComponent},
-<<<<<<< HEAD
-=======
     {path: 'videos', component:VideosComponent},
     {path: 'songs' , component:SongsComponent},
->>>>>>> FrontEnd/admin-1
 
     {path:'editimage/:id',component:EditImageComponent}]
   },
   { path: 'header', component: HeaderComponent },
-<<<<<<< HEAD
-  { path: 'sidenav', component: SidenavComponent },
-=======
   { path: 'sidenav', component: SidenavComponent }
 
->>>>>>> FrontEnd/admin-1
 
 ];
 

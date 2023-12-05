@@ -70,24 +70,6 @@
                   totalItems: count
                 }|filter:searchText;index as i">
 
-<<<<<<< HEAD
-                    <th scope="row">{{ i + 1 }}</th>
-                    <td>{{img.imageTitle}}</td>
-                    <td>{{img.imageDesc}}</td>
-                    <td><img src="{{img.imageURl}}" alt=""></td>
-                    <td class="btn-group" role="group">
-                        <a class="btn  btn-sm edit" (click)="updateView(img)"><i></i>Edit</a> &nbsp;
-                        <a class="btn danger btn-sm" (click)="dellUser(img._id)"><i></i>Delete</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="d-flex justify-content-center">
-            <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
-            </pagination-controls>
-        </div>
-    </div>
-=======
                   <th scope="row">{{ i+1 }}</th>
                   <td>{{img.imageTitle}}</td>
                   <td>{{img.imageDesc}}</td>
@@ -105,5 +87,4 @@
           </pagination-controls>
       </div>
   </div>
->>>>>>> FrontEnd/admin-1
 </div>

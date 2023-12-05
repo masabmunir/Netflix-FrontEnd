@@ -57,10 +57,7 @@
   <div class="table-responsive">
     <h3 class="text-center mt-5"><span>User Details</span></h3>
     <br>
-<<<<<<< HEAD
-=======
    
->>>>>>> FrontEnd/admin-1
     <div class="form-outline">
       <button (click)="openPopup()" class="btn add-user">Add User </button>
       <input type="search" id="form1" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
@@ -80,21 +77,12 @@
       </thead>
       <tbody>
         <tr *ngFor="let emp of empData | paginate:{
-<<<<<<< HEAD
-                    itemsPerPage: tableSize,
-                    currentPage: page,
-                    totalItems: count
-                  }|filter:searchText;index as i">
-          <th scope="row">{{ i + 1 }}</th>
-<!--          <th scope="row">{{ emp.i }}</th>-->
-=======
               itemsPerPage: tableSize,
               currentPage: page,
               totalItems: count
             }|filter:searchText;index as i">
           
           <th scope="row">{{ i + 1 }}</th>
->>>>>>> FrontEnd/admin-1
           <td>{{emp.name}}</td>
           <td>{{emp.email}}</td>
           <td>{{emp.role}}</td>
@@ -116,8 +104,3 @@
   </div>
 </div>
 
-<<<<<<< HEAD
-<!-- routerLink="../update/{{emp._id}}" -->
-=======
-
->>>>>>> FrontEnd/admin-1

@@ -1,12 +1,4 @@
 .main {
-<<<<<<< HEAD
-    background-image: url('../../assets/THT2022_inner_register_bkg_page_01.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    margin: 0px;
-    padding: 0px;
-    height: 100vh;
-=======
   /* background-color:bisque; */
   background-image: url('../../assets/SL-121019-25870-23.jpg');
   background-repeat: no-repeat;
@@ -14,22 +6,9 @@
   margin: 0px;
   padding: 0px;
   height: 100vh;
->>>>>>> FrontEnd/admin-1
 }
 
 .container {
-<<<<<<< HEAD
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-left: 18rem;
-    width: 60%;
-    padding: 20rem;
-}
-
-=======
   /* border:1px solid black; */
   /* background-color: beige; */
   display: flex;
@@ -55,7 +34,6 @@ position: relative;
 form div{
 opacity: 1;
 }
->>>>>>> FrontEnd/admin-1
 .login {
  color: white;
  text-align: center;
@@ -72,9 +50,6 @@ opacity: 1;
   color: white;
 }
 .form-control {
-<<<<<<< HEAD
-    width: 300%;
-=======
   width: 100%;
 
 }
@@ -92,5 +67,4 @@ box-shadow: rgb(59, 165, 168) 1px;
 color: white;
 margin-top: 20px;
 
->>>>>>> FrontEnd/admin-1
 }

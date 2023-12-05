@@ -23,6 +23,7 @@ export class UsersState{
 
   constructor(private userData: UserdataService) {
   }
+  
   @Selector()
   static getUserlist(state:UsersStateModel){
     return state.users
@@ -65,7 +66,7 @@ export class UsersState{
   delUsers({getState,setState}:StateContext<UsersStateModel>,{id}:DeleteUsers){
     return  this.userData.deleteUser(id).subscribe((res: any)=>{
       const state = getState()
-      const users = state.users.filter(value => value._id!=id)
+      const users = state.users.filter(value => value._id!=id) 
       setState({
         ...state,
         users:users

@@ -1,23 +1,4 @@
 .main{
-<<<<<<< HEAD
-    background-image: url('../../assets/THT2022_inner_register_bkg_page_01.jpg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    margin: 0px;
-    padding: 0px;
-    height: 100vh;
-}
-
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-left: 9rem;
-    width: 60%;
-    padding: 11rem
-=======
   background-image: url('../../assets/SL-121019-25870-23.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -48,7 +29,6 @@ margin-top: 30px;
 padding-top: 40px;
 
 
->>>>>>> FrontEnd/admin-1
 }
 
 .form-control {

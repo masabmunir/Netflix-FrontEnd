@@ -50,11 +50,8 @@ import {UsersState} from "../Store/State/userDetail.state";
     PrevDirective,
     EditImageComponent,
     MoviesComponent,
-<<<<<<< HEAD
-=======
     VideosComponent,
     SongsComponent
->>>>>>> FrontEnd/admin-1
 
   ],
   imports: [
@@ -75,13 +72,8 @@ import {UsersState} from "../Store/State/userDetail.state";
     MatDialogModule,
     MDBBootstrapModule.forRoot(),
     ToastrModule.forRoot(),
-<<<<<<< HEAD
-    NgxsModule.forRoot([UsersState]),
-    NgxsLoggerPluginModule.forRoot()
-=======
     NgxPaginationModule
 
->>>>>>> FrontEnd/admin-1
 
  ],
   providers: [],
